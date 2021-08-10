@@ -1,0 +1,189 @@
+<app-header></app-header>
+
+<div class="WrapperArea">
+    <div class="WrapperBox">
+        <div class="Small-Wrapper">
+            <div class="HelpArea">
+                <div class="enterKey">
+                    <div class="SearchBox">
+                        <a [routerLink]="['/portfolio-detail/',portfolioDetail._id]">
+                            << Back</a>
+                    </div>
+                    <div class="SearchBox SearchBoxModel">
+                        <button class="thematic-buttons" [disabled]="portfolioFrom.invalid" (click)="addPortfolio()"
+                            type="button"><i class="fa fa-file-text" aria-hidden="true"></i>Create</button>
+                    </div>
+                </div>
+                <div class="bread mt-3">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">Portfolio</li>
+                            <li class="breadcrumb-item active" aria-current="page">Portfolio Detail</li>
+                            <p>Edited on: {{portfolioDetail.updatedAt | date }}</p>
+                        </ol>
+                    </nav>
+                </div>
+                <form [formGroup]="portfolioFrom">
+                    <div class="adjust">
+                        <div class="row">
+                            <div class="col-md-3 colAdjust">
+                                <div class="Filter FilterSearch">
+                                    <div class="form-group">
+                                        <label>Select Model</label>
+                                        <select id="" formControlName="modelId" class="ant-input">
+                                            <option *ngFor="let item of modelList" [ngValue]="item._id">
+                                                {{item.modelName}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="Filter FilterSearch">
+                                    <!-- <div class="form-group">
+                                        <label>Portfolio Name</label>
+                                        <input type="text" value="ABC" name="" class="form-control" placeholder="Name">
+                                    </div> -->
+                                    <div class="form-group">
+                                        <label>Risk Level</label>
+                                        <input type="text" formControlName="riskLevel" class="form-control"
+                                            placeholder="Risk Level">
+                                    </div>
+                                </div>
+                                <div class="Filter FilterSearch">
+                                    <div class="form-group">
+                                        <label>Holdings Type</label>
+                                        <div class="newHold">
+                                            <a href="javascript:void(0)" class="active">ETF/Equity</a>
+                                            <a href="javascript:void(0)">Mutual Funds</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 colAdjust">
+                                <div class="Filter FilterSearch">
+                                    <div class="form-group">
+                                        <label>Portfolio Name</label>
+                                        <input type="text" formControlName="name" class="form-control"
+                                            placeholder="Name">
+                                    </div>
+                                </div>
+                                <div class="Filter FilterSearch">
+                                    <div class="form-group">
+                                        <label>Drift</label>
+                                        <select id="" formControlName="drift" class="ant-input">
+                                            <option value="Active"> Active </option>
+                                            <option value="Passive"> Passive </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="Filter FilterSearch">
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <textarea formControlName="description" cols="80" rows="6"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5 chartMain colAdjust">
+                                <h3>Target Allocation</h3>
+                                <div class="ClientAccount pb-3">
+                                    <h4 style="text-transform: uppercase; text-align: center;"><strong>Balance Sheets
+                                            Components</strong></h4>
+                                </div>
+                                <div class="chart" style="    margin: 0 auto;" id="chart">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="adjust">
+                    <div class="colAdjust">
+                        <h3 style="text-align: left;">Model Assigned </h3>
+                    </div>
+                    <div class="SearchBox SearchBoxModel">
+                        <a href="javaScript:void(0)" class="ml-0"><i class="fa fa-plus-circle"
+                                aria-hidden="true"></i>Add Model</a>
+                    </div>
+                </div>
+                <div class="TableList">
+                    <div class="mainTable ">
+                        <table class="table table-bordered ">
+                            <thead>
+                                <tr>
+                                    <th>Modal Name</th>
+                                    <th>Assest Allocation</th>
+                                    <th>No. of Holdings</th>
+                                    <th>% of Allocation</th>
+                                    <th>Created Date</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td><a class="Blue viewArea" [routerLink]="['/portfolio-detail']">FLAGSSHIPS</a>
+                                    </td>
+                                    <td>Stocks | EFT</td>
+                                    <td>4</td>
+                                    <td> 20%</td>
+                                    <td>28-10-20</td>
+                                    <td><a class="Red" href="javaScript:void(0)"><i class="fa fa-trash-o"
+                                                aria-hidden="true"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td><a class="Blue viewArea" [routerLink]="['/portfolio-detail']">FLAGSSHIPS</a>
+                                    </td>
+                                    <td>Stocks | EFT</td>
+                                    <td>4</td>
+                                    <td> 20%</td>
+                                    <td>28-10-20</td>
+                                    <td><a class="Red" href="javaScript:void(0)"><i class="fa fa-trash-o"
+                                                aria-hidden="true"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td><a class="Blue viewArea" [routerLink]="['/portfolio-detail']">FLAGSSHIPS</a>
+                                    </td>
+                                    <td>Stocks | EFT</td>
+                                    <td>4</td>
+                                    <td> 20%</td>
+                                    <td>28-10-20</td>
+                                    <td><a class="Red" href="javaScript:void(0)"><i class="fa fa-trash-o"
+                                                aria-hidden="true"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td><a class="Blue viewArea" [routerLink]="['/portfolio-detail']">FLAGSSHIPS</a>
+                                    </td>
+                                    <td>Stocks | EFT</td>
+                                    <td>4</td>
+                                    <td> 20%</td>
+                                    <td>28-10-20</td>
+                                    <td><a class="Red" href="javaScript:void(0)"><i class="fa fa-trash-o"
+                                                aria-hidden="true"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td><a class="Blue viewArea" [routerLink]="['/portfolio-detail']">FLAGSSHIPS</a>
+                                    </td>
+                                    <td>Stocks | EFT</td>
+                                    <td>4</td>
+                                    <td> 20%</td>
+                                    <td>28-10-20</td>
+                                    <td><a class="Red" href="javaScript:void(0)"><i class="fa fa-trash-o"
+                                                aria-hidden="true"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td><a class="Blue viewArea" [routerLink]="['/portfolio-detail']">FLAGSSHIPS</a>
+                                    </td>
+                                    <td>Stocks | EFT</td>
+                                    <td>4</td>
+                                    <td> 20%</td>
+                                    <td>28-10-20</td>
+                                    <td><a class="Red" href="javaScript:void(0)"><i class="fa fa-trash-o"
+                                                aria-hidden="true"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

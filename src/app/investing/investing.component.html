@@ -1,0 +1,675 @@
+<app-header></app-header>
+<ngx-spinner></ngx-spinner>
+<div class="WrapperArea">
+    <div class="WrapperBox">
+        <div class="Small-Wrapper">
+            <div class="HelpArea HelpArea55">
+                <!-- <ul class="nav nav-tabs MainTabAll">
+                    <li class="nav-item ">
+                        <a class="nav-link " [routerLink]="['/summary']">Summary | Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " [routerLink]="['/client']">Clients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" [routerLink]="['/investing']">Investing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/transactions']">Transactions</a>
+                    </li>
+                </ul> -->
+
+                <!-- <div class="WrapperArea"> -->
+                <!-- <div class="WrapperBox"> -->
+                <!-- <div class="Small-Wrapper"> -->
+                <div class="HelpArea">
+                    <ul class="nav nav-tabs MainTabAll" id="myTab" role="tablist">
+                        <li class="nav-item ">
+                            <a class="nav-link active" id="Models-tab" data-toggle="tab"
+                                (click)="canActiveTabs('Models-tab','Models')" role="tab" aria-controls="Models"
+                                aria-selected="true">Models</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " id="Portfolio-tab" data-toggle="tab"
+                                (click)="canActiveTabs('Portfolio-tab','Portfolio')" role="tab"
+                                aria-controls="Portfolio" aria-selected="false">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " id="Rebalancing-tab" data-toggle="tab"
+                                (click)="canActiveTabs('Rebalancing-tab','Rebalancing')" role="tab"
+                                aria-controls="Rebalancing" aria-selected="false">Trading & Rebalancing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="Thematic-tab" data-toggle="tab"
+                                (click)="canActiveTabs('Thematic-tab','Thematic')" role="tab" aria-controls="Thematic"
+                                aria-selected="false">Thematic</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="Orders-tab" data-toggle="tab"
+                                (click)="canActiveTabs('Orders-tab','Orders')" role="tab" aria-controls="Orders"
+                                aria-selected="false">Orders</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="Rewards-tab" data-toggle="tab"
+                                (click)="canActiveTabs('Rewards-tab','Rewards')" role="tab" aria-controls="Rewards"
+                                aria-selected="false">Rewards</a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade  show active" id="Models" role="tabpanel"
+                            aria-labelledby="Models-tab">
+                            <div class="enterKey">
+                                <div class="SearchBox searchIcon">
+                                    <form action="">
+                                        <input type="text" style="width: 250px;" placeholder="Search">
+                                        <a class="searchIconBtn" href="javaScipt:void(0)"><img
+                                                src="assets/images/search.svg" alt=""></a>
+                                    </form>
+                                    <!-- <a href="javaScript:void(0)">
+                                        <img class="csv img-fluid" src="assets/images/csv.svg">Download</a> -->
+                                </div>
+                                <div class="SearchBox">
+                                    <a [routerLink]="['/create-model']">Create Model</a>
+                                </div>
+                            </div>
+                            <div class="TableList">
+                                <div class="mainTable ">
+                                    <table class="table table-bordered ">
+                                        <thead>
+                                            <tr>
+                                                <th>S.No</th>
+                                                <th>Model Name</th>
+                                                <!-- <th>Holdings type</th> -->
+                                                <th>No. of Holdings</th>
+                                                <th>No. of Accounts</th>
+                                                <th>Linked Portfolio</th>
+
+                                            </tr>
+                                        </thead>
+
+
+                                        <tbody>
+
+                                            <tr *ngFor="let model of modelList; let i = index">
+                                                <td>{{i+1}}</td>
+                                                <td><a class="Blue viewArea"
+                                                        [routerLink]="['/model-detail/',model._id]">{{model?.modelName}}</a>
+                                                </td>
+                                                <td>{{model?.models.length}}</td>
+                                                <!-- <td>{{model?.adjustedFrequency}}</td> -->
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <!-- <td> In-Tolerance</td> -->
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- <div class="Pagination">
+                                    <ul>
+                                        <li><a href="javaScript:void(0)"><img src="assets/images/left-arrow.svg"
+                                                    alt=""></a></li>
+                                        <li class="active"><a href="javaScript:void(0)">1</a></li>
+                                        <li><a href="javaScript:void(0)">2</a></li>
+                                        <li><a href="javaScript:void(0)">3</a></li>
+                                        <li><a href="javaScript:void(0)"><img src="assets/images/right-arrow.svg"
+                                                    alt=""></a></li>
+                                    </ul>
+                                </div> -->
+                            </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="Portfolio" role="tabpanel" aria-labelledby="Portfolio-tab">
+                            <div class="enterKey">
+                                <div class="SearchBox searchIcon">
+                                    <form action="">
+                                        <input type="text" style="width: 250px;" placeholder="Search">
+                                        <a class="searchIconBtn" href="javaScipt:void(0)"><img
+                                                src="assets/images/search.svg" alt=""></a>
+                                    </form>
+                                    <!-- <a href="javaScript:void(0)">
+                                        <img class="csv img-fluid" src="assets/images/csv.svg">Download</a> -->
+                                </div>
+                                <div class="SearchBox">
+                                    <a [routerLink]="['/create-portfolio']">Add Portfolio</a>
+                                </div>
+                            </div>
+                            <div class="TableList" style="padding-top: 40px;">
+                                <div class="mainTable ">
+                                    <table class="table table-bordered ">
+                                        <thead>
+                                            <tr>
+                                                <th>S.No</th>
+                                                <th>Portfolio Name</th>
+                                                <th>Model Assigned</th>
+                                                <th>No. of Accounts</th>
+                                                <th>Risk Level</th>
+                                                <th>Total Return</th>
+                                                <th>Tolerance </th>
+                                                <th>Drift (Active | Passive) </th>
+                                                <th>Rebalance </th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr *ngFor="let item of portfolioList; let incr=index;">
+                                                <td>{{incr+1}}</td>
+                                                <td><a class="Blue viewArea"
+                                                        [routerLink]="['/portfolio-detail/',item._id]">{{item.name}}</a>
+                                                </td>
+                                                <td>{{item.models[0].modelName}}</td>
+                                                <td>0</td>
+                                                <td>{{item.riskLevel}}</td>
+                                                <td>$29,009</td>
+                                                <td>In-Tolerance</td>
+                                                <td>{{item.drift}}</td>
+                                                <td><a class="Blue viewArea" href="javaScript:void(0)">Rebalance</a>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- <div class="Pagination">
+                                    <ul>
+                                        <li><a href="javaScript:void(0)"><img src="assets/images/left-arrow.svg"
+                                                    alt=""></a></li>
+                                        <li class="active"><a href="javaScript:void(0)">1</a></li>
+                                        <li><a href="javaScript:void(0)">2</a></li>
+                                        <li><a href="javaScript:void(0)">3</a></li>
+                                        <li><a href="javaScript:void(0)"><img src="assets/images/right-arrow.svg"
+                                                    alt=""></a></li>
+                                    </ul>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="Rebalancing" role="tabpanel" aria-labelledby="Rebalancing-tab">
+                            <h4 class="sky">Portfolio</h4>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="InvestingTrading ">
+                                        <div class="InvestingTolerance">
+                                            <div class="retailClient">
+                                                <h5><span class="roundBox red"></span> 0<span class="d-block Red">Out of
+                                                        Tolerance</span></h5>
+                                            </div>
+                                            <div class="SearchBox d-block">
+                                                <a [routerLink]="['/raise-cash']">Raise Cash</a>
+                                            </div>
+                                        </div>
+                                        <div class="InvestingTolerance float-right">
+                                            <div class="retailClient">
+                                                <h5><span class="roundBox green"></span> 0<span
+                                                        class="d-block Green">With in Tolerance</span></h5>
+                                            </div>
+                                            <div class="SearchBox d-block">
+                                                <a [routerLink]="['/invest-cash']">Invest Cash</a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="accountProcessed">
+                                        <h5>Account to be Processed</h5>
+                                        <div class="newDeposits">
+                                            <p>New Deposits <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+                                                <span class="d-block ml-2">0</span></p>
+                                        </div>
+                                        <div class="newDeposits">
+                                            <p>New Withdrawals <i class="fa fa-question-circle-o"
+                                                    aria-hidden="true"></i> <span class="d-block ml-2">0</span></p>
+                                        </div>
+                                        <div class="newDeposits">
+                                            <p>Liquidations <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+                                                <span class="d-block ml-2">0</span></p>
+                                        </div>
+                                        <div class="newDeposits">
+                                            <p>No Portfolio Assigned <i class="fa fa-question-circle-o"
+                                                    aria-hidden="true"></i> <span class="d-block ml-2">0</span></p>
+                                        </div>
+                                        <div class="newDeposits">
+                                            <p>No Action <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+                                                <span class="d-block ml-2">0</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="accountProcessed">
+                                        <h5>Task Summary</h5>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="newDeposits">
+                                                    <p>Pending Submit <i class="fa fa-question-circle-o"
+                                                            aria-hidden="true"></i> <span class="d-block ml-2">1</span>
+                                                    </p>
+                                                </div>
+                                                <div class="newDeposits">
+                                                    <p>Cancelling <i class="fa fa-question-circle-o"
+                                                            aria-hidden="true"></i> <span class="d-block ml-2">0</span>
+                                                    </p>
+                                                </div>
+                                                <div class="newDeposits">
+                                                    <p>Rejected (Last Day) <i class="fa fa-question-circle-o"
+                                                            aria-hidden="true"></i> <span class="d-block ml-2">0</span>
+                                                    </p>
+                                                </div>
+                                                <div class="newDeposits">
+                                                    <p>Finished (Last Day) <i class="fa fa-question-circle-o"
+                                                            aria-hidden="true"></i> <span class="d-block ml-2">0</span>
+                                                    </p>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="newDeposits">
+                                                    <p>Submmited <i class="fa fa-question-circle-o"
+                                                            aria-hidden="true"></i> <span class="d-block ml-2">0</span>
+                                                    </p>
+                                                </div>
+                                                <div class="newDeposits">
+                                                    <p>Failed (Last Day) <i class="fa fa-question-circle-o"
+                                                            aria-hidden="true"></i> <span class="d-block ml-2">0</span>
+                                                    </p>
+                                                </div>
+                                                <div class="newDeposits">
+                                                    <p>Cancelled (Last Day) <i class="fa fa-question-circle-o"
+                                                            aria-hidden="true"></i> <span class="d-block ml-2">0</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="hrLine">
+                            <div class="TableList">
+                                <div class="mainTable ">
+                                    <table class="table table-bordered ">
+                                        <thead>
+                                            <tr>
+                                                <th>S.No</th>
+                                                <th>Name</th>
+                                                <th>Owner</th>
+                                                <th>Market Value</th>
+                                                <th>Available</th>
+                                                <th>Projected Target </th>
+                                                <th>Cash Target </th>
+                                                <th>Model </th>
+                                                <th>Trade Model </th>
+                                                <th>Trade Cal </th>
+                                                <th>ST Gain </th>
+                                                <th>Buys </th>
+                                                <th>Sells </th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td class="sky ">FLAGSSHIPS</td>
+                                                <td>Stocks | EFT</td>
+                                                <td>4</td>
+                                                <td>$29,009</td>
+                                                <td>In</td>
+                                                <td>Active</td>
+                                                <td>Active</td>
+                                                <td>Rebalance</td>
+                                                <td>Rebalance</td>
+                                                <td>Rebalance</td>
+                                                <td class="Green">Rebalance</td>
+                                                <td class="Red">Rebalance</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td class="sky ">FLAGSSHIPS</td>
+                                                <td>Stocks | EFT</td>
+                                                <td>4</td>
+                                                <td>$29,009</td>
+                                                <td>In</td>
+                                                <td>Active</td>
+                                                <td>Active</td>
+                                                <td>Rebalance</td>
+                                                <td>Rebalance</td>
+                                                <td>Rebalance</td>
+                                                <td class="Green">Rebalance</td>
+                                                <td class="Red">Rebalance</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td class="sky ">FLAGSSHIPS</td>
+                                                <td>Stocks | EFT</td>
+                                                <td>4</td>
+                                                <td>$29,009</td>
+                                                <td>In</td>
+                                                <td>Active</td>
+                                                <td>Active</td>
+                                                <td>Rebalance</td>
+                                                <td>Rebalance</td>
+                                                <td>Rebalance</td>
+                                                <td class="Green">Rebalance</td>
+                                                <td class="Red">Rebalance</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td class="sky ">FLAGSSHIPS</td>
+                                                <td>Stocks | EFT</td>
+                                                <td>4</td>
+                                                <td>$29,009</td>
+                                                <td>In</td>
+                                                <td>Active</td>
+                                                <td>Active</td>
+                                                <td>Rebalance</td>
+                                                <td>Rebalance</td>
+                                                <td>Rebalance</td>
+                                                <td class="Green">Rebalance</td>
+                                                <td class="Red">Rebalance</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td class="sky ">FLAGSSHIPS</td>
+                                                <td>Stocks | EFT</td>
+                                                <td>4</td>
+                                                <td>$29,009</td>
+                                                <td>In</td>
+                                                <td>Active</td>
+                                                <td>Active</td>
+                                                <td>Rebalance</td>
+                                                <td>Rebalance</td>
+                                                <td>Rebalance</td>
+                                                <td class="Green">Rebalance</td>
+                                                <td class="Red">Rebalance</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="Pagination">
+                                    <ul>
+                                        <li><a href="javaScript:void(0)"><img src="assets/images/left-arrow.svg"
+                                                    alt=""></a></li>
+                                        <li class="active"><a href="javaScript:void(0)">1</a></li>
+                                        <li><a href="javaScript:void(0)">2</a></li>
+                                        <li><a href="javaScript:void(0)">3</a></li>
+                                        <li><a href="javaScript:void(0)"><img src="assets/images/right-arrow.svg"
+                                                    alt=""></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="Thematic" role="tabpanel" aria-labelledby="Thematic-tab">
+                            <div class="enterKey">
+                                <div class="SearchBox">
+                                    <div class="SearchBox searchIcon">
+                                        <form action="">
+                                            <input type="text" style="width: 250px;" placeholder="Search">
+                                            <a class="searchIconBtn" href="javaScipt:void(0)"><img
+                                                    src="assets/images/search.svg" alt=""></a>
+                                        </form>
+
+                                    </div>
+                                </div>
+                                <div class="SearchBox">
+                                    <a [routerLink]="['/create-thematic']">Add Thematic</a>
+                                </div>
+                            </div>
+                            <div class="TableList">
+                                <div class="mainTable ">
+                                    <table class="table table-bordered ">
+                                        <thead>
+                                            <tr>
+                                                <th>S.No</th>
+                                                <th>Thematic Name</th>
+                                                <th>Model Assigned</th>
+                                                <th>No. of Accounts</th>
+                                                <th>Total Return</th>
+                                                <th>In-Tolerance | Out-Tolerance </th>
+                                                <th>Drift (Active | Passive) </th>
+                                                <th>Rebalance </th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr *ngFor="let item of thematicList; let incr=index; ">
+                                                <td>{{incr+1}}</td>
+                                                <td><a class="Blue viewArea"
+                                                        [routerLink]="['/thematic-detail/',item._id]">{{item.thematicName}}</a>
+                                                </td>
+                                                <td>{{item.models[0].modelName}}</td>
+                                                <td>0</td>
+                                                <td>$0</td>
+                                                <td>In-Tolerance</td>
+                                                <td>Active</td>
+                                                <td><a class="Blue viewArea" href="javaScript:void(0)">Rebalance</a>
+                                                </td>
+                                            </tr>
+                                            <!-- <tr>
+                                                <td>2</td>
+                                                <td><a class="Blue viewArea"
+                                                        [routerLink]="['/thematic-detail']">FLAGSSHIPS</a></td>
+                                                <td>Stocks | EFT</td>
+                                                <td>4</td>
+                                                <td>$29,009</td>
+                                                <td>In-Tolerance</td>
+                                                <td>Active</td>
+                                                <td><a class="Blue viewArea" href="javaScript:void(0)">Rebalance</a>
+                                                </td>
+                                            </tr> -->
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="Pagination">
+                                    <ul>
+                                        <li><a href="javaScript:void(0)"><img src="assets/images/left-arrow.svg"
+                                                    alt=""></a></li>
+                                        <li class="active"><a href="javaScript:void(0)">1</a></li>
+                                        <li><a href="javaScript:void(0)">2</a></li>
+                                        <li><a href="javaScript:void(0)">3</a></li>
+                                        <li><a href="javaScript:void(0)"><img src="assets/images/right-arrow.svg"
+                                                    alt=""></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="Orders" role="tabpanel" aria-labelledby="Orders-tab">
+                            <div class="enterKey">
+                                <div class="SearchBox">
+                                    <div class="SearchBox searchIcon">
+                                        <form action="">
+                                            <input type="text" style="width: 250px;" placeholder="Search">
+                                            <a class="searchIconBtn" href="javaScipt:void(0)"><img
+                                                    src="assets/images/search.svg" alt=""></a>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="TableList">
+                                <div class="mainTable ">
+                                    <table class="table table-bordered ">
+                                        <thead>
+                                            <tr>
+
+                                                <th>Client Name</th>
+                                                <th>Account No.</th>
+                                                <th>Stock Ticker</th>
+                                                <th>Stock Name</th>
+                                                <th>Quantity </th>
+                                                <th>Price </th>
+                                                <th>Market Value </th>
+                                                <th>trade type</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+
+                                                <td class="sky">John</td>
+                                                <td>2345676543</td>
+                                                <td class="Blue sky viewArea">APL</td>
+                                                <td>Apple</td>
+                                                <td>2</td>
+                                                <td>$2343</td>
+                                                <td class="Green">$23454</td>
+                                                <td>buy</td>
+                                            </tr>
+                                            <tr>
+
+                                                <td class="sky">John</td>
+                                                <td>2345676543</td>
+                                                <td class="Blue sky viewArea">APL</td>
+                                                <td>Apple</td>
+                                                <td>2</td>
+                                                <td>$2343</td>
+                                                <td class="Green">$23454</td>
+                                                <td>sell</td>
+                                            </tr>
+                                            <tr>
+
+                                                <td class="sky">John</td>
+                                                <td>2345676543</td>
+                                                <td class="Blue sky viewArea">APL</td>
+                                                <td>Apple</td>
+                                                <td>2</td>
+                                                <td>$2343</td>
+                                                <td class="Green">$23454</td>
+                                                <td>buy</td>
+                                            </tr>
+                                            <tr>
+
+                                                <td class="sky">John</td>
+                                                <td>2345676543</td>
+                                                <td class="Blue sky viewArea">APL</td>
+                                                <td>Apple</td>
+                                                <td>2</td>
+                                                <td>$2343</td>
+                                                <td class="Green">$23454</td>
+                                                <td>sell</td>
+                                            </tr>
+                                            <tr>
+
+                                                <td class="sky">John</td>
+                                                <td>2345676543</td>
+                                                <td class="Blue sky viewArea">APL</td>
+                                                <td>Apple</td>
+                                                <td>2</td>
+                                                <td>$2343</td>
+                                                <td class="Green">$23454</td>
+                                                <td>buy</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="Pagination">
+                                    <ul>
+                                        <li><a href="javaScript:void(0)"><img src="assets/images/left-arrow.svg"
+                                                    alt=""></a></li>
+                                        <li class="active"><a href="javaScript:void(0)">1</a></li>
+                                        <li><a href="javaScript:void(0)">2</a></li>
+                                        <li><a href="javaScript:void(0)">3</a></li>
+                                        <li><a href="javaScript:void(0)"><img src="assets/images/right-arrow.svg"
+                                                    alt=""></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="Rewards" role="tabpanel" aria-labelledby="Rewards-tab">
+                            <div class="enterKey">
+                                <div class="SearchBox">
+                                    <div class="SearchBox searchIcon">
+                                        <form action="">
+                                            <input type="text" style="width: 250px;" placeholder="Search">
+                                            <a class="searchIconBtn" href="javaScipt:void(0)"><img
+                                                    src="assets/images/search.svg" alt=""></a>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="TableList">
+                                <div class="mainTable ">
+                                    <table class="table table-bordered ">
+                                        <thead>
+                                            <tr>
+                                                <th>S.No</th>
+                                                <th>Client Name</th>
+                                                <th>Level</th>
+                                                <th>Reward Earned</th>
+                                                <th>Earned Date</th>
+                                                <th>Client's Email </th>
+                                                <th>Referral Email </th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Alisson Maxwell</td>
+                                                <td>Level-1</td>
+                                                <td class="Blue sky viewArea">APL</td>
+                                                <td>20-oct-20</td>
+                                                <td>In@gmail.com</td>
+                                                <td>rea@gmail.com</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Alisson Maxwell</td>
+                                                <td>Level-1</td>
+                                                <td class="Blue sky viewArea">APL</td>
+                                                <td>20-oct-20</td>
+                                                <td>In@gmail.com</td>
+                                                <td>rea@gmail.com</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Alisson Maxwell</td>
+                                                <td>Level-1</td>
+                                                <td class="Blue sky viewArea">APL</td>
+                                                <td>20-oct-20</td>
+                                                <td>In@gmail.com</td>
+                                                <td>rea@gmail.com</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Alisson Maxwell</td>
+                                                <td>Level-1</td>
+                                                <td class="Blue sky viewArea">APL</td>
+                                                <td>20-oct-20</td>
+                                                <td>In@gmail.com</td>
+                                                <td>rea@gmail.com</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Alisson Maxwell</td>
+                                                <td>Level-1</td>
+                                                <td class="Blue sky viewArea">APL</td>
+                                                <td>20-oct-20</td>
+                                                <td>In@gmail.com</td>
+                                                <td>rea@gmail.com</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="Pagination">
+                                    <ul>
+                                        <li><a href="javaScript:void(0)"><img src="assets/images/left-arrow.svg"
+                                                    alt=""></a></li>
+                                        <li class="active"><a href="javaScript:void(0)">1</a></li>
+                                        <li><a href="javaScript:void(0)">2</a></li>
+                                        <li><a href="javaScript:void(0)">3</a></li>
+                                        <li><a href="javaScript:void(0)"><img src="assets/images/right-arrow.svg"
+                                                    alt=""></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- </div> -->
+                <!-- </div> -->
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+</div>

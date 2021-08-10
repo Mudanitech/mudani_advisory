@@ -1,0 +1,301 @@
+<app-header></app-header>
+<ngx-spinner *ngIf="isShowSpinner"></ngx-spinner>
+<div class="WrapperArea">
+    <div class="WrapperBox">
+        <div class="Small-Wrapper">
+            <div class="HelpArea">
+                <div class="enterKey">
+                    <div class="SearchBox">
+                        <a href="javaScript:void(0)" (click)=backClicked()>
+                            << Back</a>
+                    </div>
+                    <div class="SearchBox SearchBoxModel">
+                        <a (click)="deleteModels(modelDetail)" href="javaScript:void(0)" class="Red"><i
+                                style="cursor:pointer;" class="fa fa-trash-o" aria-hidden="true"></i>Delete</a>
+                        <a href="javaScript:void(0)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</a>
+                    </div>
+                </div>
+                <div class="bread mt-3">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">Models</li>
+                            <li class="breadcrumb-item active" aria-current="page">Model Details</li>
+                            <p>Addes on: {{modelDetail.createdAt | date}}</p>
+                        </ol>
+                    </nav>
+                </div>
+
+                <div class="adjust">
+                    <div class="row">
+                        <div class="col-md-3 colAdjust">
+                            <h3>Adjust Frequency <span>{{modelDetail.adjustedFrequency}}</span></h3>
+                            <h3>Name <span>{{modelDetail.modelName}}</span></h3><br>
+                            <h3>Type <br> <span *ngIf="modelDetail.type==1 ; then ifBlock else elseBlock">
+
+
+
+                                </span>
+                                <ng-template #ifBlock><span>Portfolio</span></ng-template>
+                                <ng-template #elseBlock><span>Thematic</span></ng-template>
+                            </h3>
+                        </div>
+                        <div class="col-md-3 colAdjust">
+                            <h3>Maximum Deviation Allowance (%) <span>{{modelDetail.maximumDeviationAllowance}}</span>
+                            </h3>
+                            <h3>Description <span>{{modelDetail.description}} </span></h3>
+                        </div>
+                        <div class="col-md-6 chartMain colAdjust">
+                            <h3>Target Allocation</h3>
+                            <div class="ClientAccount pb-3">
+                                <h4 style="text-transform: uppercase; text-align: center;"><strong>Balance Sheets
+                                        Components</strong></h4>
+                            </div>
+                            <div class="chart" style="    margin: 0 auto;" id="chart">
+                                <div class="newCharts">
+                                    <div id="chart" style="padding-left: 85px;">
+                                        <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart"
+                                            [labels]="chartOptions.labels" [title]="chartOptions.title"
+                                            [theme]="chartOptions.theme" [responsive]="chartOptions.responsive">
+                                        </apx-chart>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex;justify-content: space-between;padding: 35px 0px;">
+                    <div class="totalCount totalCountModel">
+                        <div class="SearchBox SearchBoxModel">
+                            <a href="javaScript:void(0)" class="ml-0"><i class="fa fa-plus-circle"
+                                    aria-hidden="true"></i>Add New</a>
+                        </div>
+                        <div class="SearchBox">
+                            <div class="SearchBox searchIcon">
+                                <form [formGroup]="tickertForm">
+                                    <input type="text" formControlName="title" (keyup.enter)="searchTicker()"
+                                        style="width: 250px;" placeholder="Search">
+                                    <a class="searchIconBtn" href="javaScipt:void(0)"><img
+                                            src="assets/images/search.svg" alt=""></a>
+                                </form>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="SearchBox SearchBoxModel">
+                        <a href="javaScript:void(0)" class="mr-4"><i class="fa fa-download"
+                                aria-hidden="true"></i>Download</a>
+                    </div>
+                </div>
+                <div class="TableList" *ngIf="ticketData.symbol">
+                    <div class="mainTable ">
+                        <table class="table table-bordered ">
+                            <thead>
+                                <tr>
+                                    <th>Ticker</th>
+                                    <th> Name</th>
+                                    <th>Latest Price</th>
+                                    <th>Holding Type</th>
+                                    <th>Target Value(%)</th>
+                                    <th>Action</th>
+                                    <!-- <th>Upper(%)</th>
+                                    <th>Lower(%)</th> -->
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+
+                                <tr>
+                                    <td>{{ticketData.symbol}}</td>
+                                    <td>{{ticketData.companyName}}</td>
+                                    <td>{{ticketData.latestPrice}}</td>
+                                    <td><select id="" #holdingType class="ant-input">
+                                            <option value="ETF"> ETF </option>
+                                            <option value="Mutual Funds"> Mutual Funds </option>
+                                            <option value="Stock"> Stock </option>
+                                            <option value="Crypto"> Crypto </option>
+                                            <option value="Bonds"> Bonds </option>
+                                            <option value="Alternative"> Alternative </option>
+                                            <option value="Cash"> Cash </option>
+                                        </select></td>
+                                    <td><input #targetValue placeholder="Target Value" />%</td>
+                                    <td><button class="thematic-buttons" type="button"
+                                            (click)="saveData(holdingType,targetValue)" style="background: #2c8fcd;
+                                            color: #fff;">Create</button></td>
+                                    <!-- <td><input #phone placeholder="phone number" />%</td>
+                                    <td><input #phone placeholder="phone number" />%</td> -->
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <hr>
+                </div>
+
+                <!-- <div class="totalCount">
+                    <ul>
+                        <li>Total: <span>100.00%</span></li>
+                        <li>Total Cash: <span>20.00%</span></li>
+                        <li>Total Security: <span>90.00%</span></li>
+                        <li>No. of Holdings: <span>10</span></li>
+                    </ul>
+                </div> -->
+                <div class="TableList">
+                    <div class="mainTable ">
+                        <table class="table table-bordered ">
+                            <thead>
+                                <tr>
+                                    <th>Ticker</th>
+                                    <th> Name</th>
+                                    <th>Latest Price</th>
+                                    <th>Asset Class</th>
+                                    <th>Target Value(%)</th>
+                                    <th>Upper(%)</th>
+                                    <th>Lower(%)</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <!-- <tr>
+                                    <td>USD Cash</td>
+                                    <td>USD Cash</td>
+                                    <td></td>
+                                    <td> Cash</td>
+                                    <td>28.00%</td>
+                                    <td>17.00%</td>
+                                    <td>25.00%</td>
+                                </tr> -->
+                                <tr *ngFor="let item of modelDetail.models">
+                                    <td class="sky">{{item.symbol}}</td>
+                                    <td>{{item.companyName}}</td>
+                                    <td>{{item.latestPrice}}</td>
+                                    <td class="sky"> {{item.holdingType}}</td>
+                                    <td>{{item.targetValue}}%</td>
+                                    <td>0%</td>
+                                    <td>0%</td>
+                                    <td>
+                                        <div class="icon-group"><i style="cursor:pointer;" (click)="deleteHolding(item)"
+                                                class="fa fa-trash-o anticon btn-disabled icon-normal"
+                                                aria-hidden="true"></i></div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- <div class="ModalBox">
+    <div id="refer" class="modal " role="dialog">
+        <div tabindex="-1" class="ant-modal-wrap " role="dialog">
+            <form [formGroup]="form">
+                <div role="document" class="ant-modal matching-modal">
+                    <div tabindex="0" style="width: 0px; height: 0px; overflow: hidden;">sentinelStart</div>
+                    <div class="ant-modal-content">
+                        <div class="ant-modal-body">
+                            <div class="text-center font-16 font-bold mb-16" style="margin-bottom: 30px;">Ticker Detail
+                            </div>
+                            <hr>
+                            <label>Symbol : <span
+                                    class="text-gray font-12 ticket-detail">{{ticketData.symbol}}</span></label><br>
+
+                            <label>Company Name : <span
+                                    class="text-gray font-12 ticket-detail">{{ticketData.companyName}}</span></label><br>
+
+                            <label>ISIN : <span
+                                    class="text-gray font-12 ticket-detail">{{ticketData.isin}}</span></label><br>
+
+                            <label>CUSIP : <span
+                                    class="text-gray font-12 ticket-detail">{{ticketData.cusip}}</span></label><br>
+
+                            <label>Country : <span
+                                    class="text-gray font-12 ticket-detail">{{ticketData.country}}</span></label><br>
+
+                            <label>MIC : <span
+                                    class="text-gray font-12 ticket-detail">{{ticketData.mic}}</span></label><br>
+
+                            <label>Currency : <span
+                                    class="text-gray font-12 ticket-detail">{{ticketData.currency}}</span></label><br>
+
+                            <label>Source : <span
+                                    class="text-gray font-12 ticket-detail">{{ticketData.source}}</span></label><br>
+
+                            <label>Ident Type : <span
+                                    class="text-gray font-12 ticket-detail">{{ticketData.identType}}</span></label><br>
+
+                            <label>Exchange : <span
+                                    class="text-gray font-12 ticket-detail">{{ticketData.exchange}}</span></label><br>
+
+                            <hr>
+                            <form [formGroup]="addTickerform">
+                                <label>Select Type</label>
+                                <div class="ant-row ant-form-item is-invalid is-pristine is-untouched is-unfocused">
+                                    <div class="ant-form-item-control-wrapper">
+                                        <div class="ant-form-item-control"><span class="ant-form-item-children"><span
+                                                    class="w-full ant-cascader-picker w-full" tabindex="0"><span
+                                                        class="ant-cascader-picker-label"></span>
+                                                    <select name="" formControlName="tickerType" id=""
+                                                        class="ant-input">
+                                                        <option [ngValue]="1"> Popular Stocks </option>
+                                                        <option [ngValue]="2"> Popular Funds </option>
+                                                        <option [ngValue]="3"> Popular Themes </option>
+                                                    </select>
+                                                </span></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="Filter FilterSearch">
+                                    <div class="form-group">
+                                        <label>Image</label>
+                                        <input type="file" formControlName="tickerImage"
+                                            (change)="onFileSelected($event)" class="form-control" placeholder="Name">
+                                    </div>
+                                </div><br>
+                            </form>
+                            <div class="text-center mt-24"><button (click)="closePops('refer')" type="button"
+                                    class="ant-btn my-0 mx-4"><span>Cancel</span></button>
+                                <button type="button" [disabled]="addTickerform.invalid" (click)="saveData()"
+                                    class="ant-btn my-0 mx-4 ant-btn-primary"><span>Save</span></button></div>
+                        </div>
+                    </div>
+                    <div tabindex="0" style="width: 0px; height: 0px; overflow: hidden;">sentinelEnd</div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="ModalBox">
+    <div id="referError" class="modal " role="dialog">
+        <div tabindex="-1" class="ant-modal-wrap " role="dialog">
+
+            <div role="document" class="ant-modal matching-modal">
+                <div tabindex="0" style="width: 0px; height: 0px; overflow: hidden;">sentinelStart</div>
+                <div class="ant-modal-content">
+                    <div class="ant-modal-body">
+                        <div class="text-center font-16 font-bold mb-16" style="margin-bottom: 30px;">Ticker Detail
+                        </div>
+                        <hr>
+                        <label style="margin-left: 78px;font-size: 19px;">Ticker is not available.</label><br>
+
+
+
+                        <div class="text-center mt-24">
+                            <button type="button" (click)="closePops('referError')"
+                                class="ant-btn my-0 mx-4 ant-btn-primary"><span>Okay</span></button></div>
+                    </div>
+                </div>
+                <div tabindex="0" style="width: 0px; height: 0px; overflow: hidden;">sentinelEnd</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+<app-header></app-header>
+
+<!-- <div class="WrapperArea">
+    <div class="WrapperBox">
+        <div class="Small-Wrapper">
+            <div class="HelpArea">
+                <div class="wait-list">
+                    <h2 class="sky text-center">Wait List</h2>
+                    <div class="wait-list-area">
+                        <h4><span class="sky">Serial No. </span> 1</h4>
+                        <h4><span class="sky">Email Id :</span>vishu@gmail.com</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="WrapperArea">
+    <div class="WrapperBox">
+        <div class="Small-Wrapper">
+            <div class="HelpArea">
+                <div class="enterKey">
+                    <div class="SearchBox">
+                        <h3>Free Stock Distribution</h3>
+                    </div>
+                    <!-- <div class="SearchBox">
+                        <form action="">
+                            <input type="text" placeholder="Search Name, Email">
+                            <button type="button">Apply</button>
+                        </form>
+                    </div> -->
+
+                </div>
+                <div class="TableList" style="padding-top: 40px;">
+                    <div class="mainTable ">
+                        <table class="table table-bordered ">
+                            <thead>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>User Name </th>
+                                    <th>User Email </th>
+                                    <th>Friends Name</th>
+                                    <th>Friends Email</th>
+                                    <th>Friends Phone No.</th>
+                                    <th>Stock Name</th>
+                                    <th>Stock Image</th>
+                                    <th>Friend Registered (Yes/No)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let user of referList; let i = index">
+                                    <td>{{i+1}}</td>
+                                    <td>20|11|21</td>
+                                    <td>2 a.m</td>
+                                    <td>{{user?.yourName}}</td>
+                                    <td>{{user?.yourEmail}}</td>
+                                    <td>{{user?.friendName}}</td>
+                                    <td>{{user?.friendEmail}}</td>
+                                    <td>{{user?.friendPhone}}</td>
+                                    <td>{{user?.stockName}}</td>
+                                    <td class="tdImg"><img src="assets/images/logo.png" alt="stock" class="img-fluid">
+                                    </td>
+                                    <td>Yes</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

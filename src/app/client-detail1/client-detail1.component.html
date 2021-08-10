@@ -1,0 +1,773 @@
+<app-header></app-header>
+
+<div class="WrapperArea">
+    <div class="WrapperBox">
+        <div class="Small-Wrapper">
+            <div class="HelpArea">
+                <!-- <ul class="nav nav-tabs MainTabAll">
+                    <li class="nav-item ">
+                        <a class="nav-link " [routerLink]="['/summary']">Summary | Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" [routerLink]="['/client']">Clients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " [routerLink]="['/investing']">Investing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/transactions']">Transactions</a>
+                    </li>
+                </ul> -->
+
+                <div class="tab-content" id="myTabContent">
+
+
+                    <div class="tab-pane fade  show active" id="Clients" role="tabpanel" aria-labelledby="Clients-tab">
+                        <!-- Client Inner tab START -->
+                        <div class="HelpArea">
+                            <ul class="nav nav-tabs boxs justify-content-end" id="myTab" role="tablist" style="margin-bottom: 40px;">
+                                <li class="nav-item ">
+                                    <a class="nav-link " id="Performance-tab" data-toggle="tab" href="#Performance"
+                                        role="tab" aria-controls="Performance" aria-selected="true">Performance</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="Holdings-tab" data-toggle="tab" href="#Holdings"
+                                        role="tab" aria-controls="Holdings" aria-selected="false">Holdings</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="Held-tab" data-toggle="tab" href="#Held" role="tab"
+                                        aria-controls="Held" aria-selected="false">Held Away Accounts</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="Activity-tab" data-toggle="tab" href="#Activity" role="tab"
+                                        aria-controls="Activity" aria-selected="false">Activity</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="Fees-tab" data-toggle="tab" href="#Fees" role="tab"
+                                        aria-controls="Fees" aria-selected="false">Fees</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="Contact-tab" data-toggle="tab" href="#Contact" role="tab"
+                                        aria-controls="Contact" aria-selected="false">Contact Card</a>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade " id="Performance" role="tabpanel"
+                                    aria-labelledby="Performance-tab">
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="HelpContent">
+                                                <div class="clientName pb-3">
+                                                    <h4>Client Name : Alison Maxwell</h4>
+                                                    <h4>Total AUM : $234,232</h4>
+                                                </div>
+                                                <div class="clientDrop">
+                                                    <select name="cars" id="cars">
+                                                        <option value="first">Account</option>
+                                                        <option value="second">Account-1</option>
+                                                        <option value="third">Account-2</option>
+                                                    </select>
+                                                </div>
+                                                <!-- <div class="ClientAccount pb-3">
+                                                    <h4><strong> Account 1</strong></h4>
+                                                    <h5>Account Number : 23456543</h5>
+                                                    <h5>Account Type : Joint Account</h5>
+                                                    <h5>Managed Account </h5>
+                                                    <h5>Portfolio : Portfolio-1</h5>
+                                                    <h5>Total Account Value : $23456543</h5>
+                                                </div> -->
+                                                <div class="ClientAccount clietsDett pb-3">
+                                                    <h2>Total Balance <span>$ 3,549,303</span></h2>
+                                                    <ul>
+                                                        <li><span class="netName">Net Deposits
+                                                            </span><span class="netValue">$ 200</span></li>
+                                                        <li><span class="netName">Net Withdrawals
+                                                            </span><span class="netValue">$ 200</span></li>
+                                                        <li><span class="netName">Net Earnings
+                                                            </span><span class="netValue">$ 200</span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <!-- <h2 class="sky text-center pt-4">Client Fees Graph</h2> -->
+                                            <a href="javaScript:void(0)" class="circleLink"><i
+                                                    class="fa fa-plus-circle  mr-1" aria-hidden="true"></i>Trade</a>
+                                            <div class="aumData">
+                                                <div class="aumText">
+                                                    <h6 class="">AUM <span> (as of 12/04/2020)</span></h6>
+                                                </div>
+                                                <div class="aumRight">
+                                                    <div class="aumMonth">
+                                                        <ul class="ulAumFive">
+                                                            <li class="active">YTD</li>
+                                                            <li>3M</li>
+                                                            <li>6M</li>
+                                                            <li>1Y</li>
+                                                            <li>5Y</li>
+                                                            <li>ALL</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="aumMore">
+                                                        <a href="javaScript:void(0)">[ More ]</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="filterDay">
+                                                <div class="filterDay1">
+                                                    <h6>Day <span class="Red">-4.16%</span></h6>
+                                                </div>
+                                                <div class="filterDay1">
+                                                    <h6>Last 7 Day <span class="Red">-4.16%</span></h6>
+                                                </div>
+                                                <div class="filterDay1">
+                                                    <h6>Last 30 Day <span class="Red">-4.16%</span></h6>
+                                                </div>
+                                                <div class="filterDay1">
+                                                    <h6>Total Assets <span><strong></strong> $1.76M</span></h6>
+                                                </div>
+                                            </div>
+                                            <div id="graphdiv" style="height: 400px"></div>
+                                        </div>
+                                    </div>
+                                    <div class="newGraphTable" style="padding-top: 30px;">
+                                        <h2 style="padding-bottom: 20px;">Performance</h2>
+                                        <div class="TableList">
+                                            <div class="mainTable ">
+                                                <table class="table table-bordered " style="width: 100%;">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name
+                                                            </th>
+                                                            <th>Type
+                                                            </th>
+                                                            <th>Account type </th>
+                                                            <th>YTD return </th>
+                                                            <th>Balance  </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td> Alison Maxwell</td>
+                                                            <td>IRA</td>
+                                                            <td>TD</td>
+                                                            <td>9.20%</td>
+                                                            <td>$ 2000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> Alison Maxwell</td>
+                                                            <td>IRA</td>
+                                                            <td>TD</td>
+                                                            <td>9.20%</td>
+                                                            <td>$ 2000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> Alison Maxwell</td>
+                                                            <td>IRA</td>
+                                                            <td>TD</td>
+                                                            <td>9.20%</td>
+                                                            <td>$ 2000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> Alison Maxwell</td>
+                                                            <td>IRA</td>
+                                                            <td>TD</td>
+                                                            <td>9.20%</td>
+                                                            <td>$ 2000</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade show active" id="Holdings" role="tabpanel"
+                                    aria-labelledby="Holdings-tab">
+                                    <div class="row chartMain pb-4">
+                                        <div class="col-md-6">
+                                            <div class="ClientAccount pb-3">
+                                                <div class="clientDrop" style="margin-bottom: 20px;">
+                                                    <select name="cars" id="cars">
+                                                        <option value="first">Account</option>
+                                                        <option value="second">Account-1</option>
+                                                        <option value="third">Account-2</option>
+                                                    </select>
+                                                </div>
+                                                <!-- <h4><strong>Self Directed</strong></h4> -->
+                                                <h6><a [routerLink]="['/self-directed-detail']">Portfolio Name : Self
+                                                        Directed</a></h6>
+                                            </div>
+                                            <!-- <div class="chart chart22" id="chart"></div> -->
+
+                                            <div class="newCharts">
+                                                <div id="chart">
+                                                    <apx-chart
+                                                      [series]="chartOptions.series"
+                                                      [chart]="chartOptions.chart"
+                                                      [labels]="chartOptions.labels"
+                                                      [title]="chartOptions.title"
+                                                      [theme]="chartOptions.theme"
+                                                      [responsive]="chartOptions.responsive"
+                                                    ></apx-chart>
+                                                  </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="col-md-6">
+                                            <div class="chartCatgry">
+                                                <a [routerLink]="['/category-detail']">
+                                                    <h3 style="color:#008ffb;">Category-1 <span>38%</span></h3>
+                                                </a>
+                                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum
+                                                    dolore, nesciunt at impedit cupiditate reiciendis, neque voluptatum
+                                                    suscipit sed</p>
+                                            </div>
+                                            <div class="chartCatgry">
+                                                <a [routerLink]="['/category-detail']">
+                                                    <h3 style="color:#00e396;">Category-2 <span>48%</span></h3>
+                                                </a>
+                                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum
+                                                    dolore, nesciunt at impedit cupiditate reiciendis, neque voluptatum
+                                                    suscipit sed</p>
+                                            </div>
+                                            <div class="chartCatgry">
+                                                <a [routerLink]="['/category-detail']">
+                                                    <h3 style="color:#feb019;">Category-3 <span>28%</span></h3>
+                                                </a>
+                                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum
+                                                    dolore, nesciunt at impedit cupiditate reiciendis, neque voluptatum
+                                                    suscipit sed</p>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                    <div class="newGraphTable">
+                                        <h2 style="padding-bottom: 20px;">Holdings</h2>
+                                        <div class="TableList">
+                                            <div class="mainTable ">
+                                                <table class="table table-bordered " style="width: 100%;">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Ticker
+                                                            </th>
+                                                            <th>Name of company
+                                                            </th>
+                                                            <th>Price</th>
+                                                            <th>Weighting </th>
+                                                            <th>Quantity  </th>
+                                                            <th>Total value
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td> <a href="javascript:void(0)" class="sky Blue viewArea pb-2">AMZN</a></td>
+                                                            <td>Mobulous</td>
+                                                            <td>$ 45</td>
+                                                            <td> Welcome back, <br>
+                      Dan</td>
+                                                            <td>6</td>
+                                                            <td>$ 2000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> <a href="javascript:void(0)"  class="sky Blue viewArea pb-2">AMZN</a></td>
+                                                            <td>Mobulous</td>
+                                                            <td>$ 45</td>
+                                                            <td> Welcome back, <br>
+                      Dan</td>
+                                                            <td>6</td>
+                                                            <td>$ 2000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> <a href="javascript:void(0)"  class="sky Blue viewArea pb-2">AMZN</a></td>
+                                                            <td>Mobulous</td>
+                                                            <td>$ 45</td>
+                                                            <td> Welcome back, <br>
+                      Dan</td>
+                                                            <td>6</td>
+                                                            <td>$ 2000</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- <div class="row chartMain pb-4">
+                                        <div class="col-md-6">
+                                            <div class="ClientAccount pb-3">
+                                                <h4><strong> Account-2 : Managed Account</strong></h4>
+                                                <h6><a [routerLink]="['/managed-account-detail']">Portfolio Name :
+                                                        Managed Account</a></h6>
+                                            </div>
+                                            <div class="chart" id="chart2">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h3 class="pb-4">Risk Level : Conservation</h3>
+                                            <div class="chartCatgry">
+                                                <a [routerLink]="['/category-detail']">
+                                                    <h3 style="color:#008ffb;">Category-1 <span>38%</span></h3>
+                                                </a>
+                                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum
+                                                    dolore, nesciunt at impedit cupiditate reiciendis, neque voluptatum
+                                                    suscipit sed</p>
+                                            </div>
+                                            <div class="chartCatgry">
+                                                <a [routerLink]="['/category-detail']">
+                                                    <h3 style="color:#00e396;">Category-2 <span>48%</span></h3>
+                                                </a>
+                                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum
+                                                    dolore, nesciunt at impedit cupiditate reiciendis, neque voluptatum
+                                                    suscipit sed</p>
+                                            </div>
+                                            <div class="chartCatgry">
+                                                <a [routerLink]="['/category-detail']">
+                                                    <h3 style="color:#feb019;">Category-3 <span>28%</span></h3>
+                                                </a>
+                                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum
+                                                    dolore, nesciunt at impedit cupiditate reiciendis, neque voluptatum
+                                                    suscipit sed</p>
+                                            </div>
+                                        </div> 
+                                    </div> -->
+
+                                    <!-- <div class="row chartMain pb-4">
+                                        <div class="col-md-6">
+                                            <div class="ClientAccount pb-3">
+                                                <h4><strong> Account-3 : Thematic</strong></h4>
+                                                <h6><a [routerLink]="['/thematic-detail']">Portfolio Name : Thematic</a>
+                                                </h6>
+                                            </div>
+                                            <div class="chart" id="chart3">
+                                            </div>
+                                        </div>
+                                         <div class="col-md-6">
+                                            <div class="chartCatgry">
+                                                <a [routerLink]="['/category-detail']">
+                                                    <h3 style="color:#008ffb;">Category-1 <span>38%</span></h3>
+                                                </a>
+                                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum
+                                                    dolore, nesciunt at impedit cupiditate reiciendis, neque voluptatum
+                                                    suscipit sed</p>
+                                            </div>
+                                            <div class="chartCatgry">
+                                                <a [routerLink]="['/category-detail']">
+                                                    <h3 style="color:#00e396;">Category-2 <span>48%</span></h3>
+                                                </a>
+                                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum
+                                                    dolore, nesciunt at impedit cupiditate reiciendis, neque voluptatum
+                                                    suscipit sed</p>
+                                            </div>
+                                        </div> 
+                                    </div> -->
+                                </div>
+
+                                <div class="tab-pane fade" id="Held" role="tabpanel" aria-labelledby="Held-tab">
+                                    <div class="totalClient totalClient-detail1 totalClient-detail11 pb-5">
+                                        <div class="retailClient">
+                                            <h5><span class="sky d-block">$234543234</span>Total Held-Away Balance</h5>
+                                        </div>
+                                        <div class="retailClient">
+                                            <h5><span class="sky d-block">8</span>Total Linked Account</h5>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="HelpContent">
+                                        <div class="clientName pb-3">
+                                            <h4 class="pb-2">Client Name : Alison Maxwell</h4>
+                                        </div>
+                                        <div class="row client_detail1">
+                                            <div class="col-md-6">
+                                                <div class="ClientAccount pb-3">
+                                                    <h4><strong>Linked Account : 1</strong></h4>
+                                                    <h5>Name of Bank : Bank of America</h5>
+                                                    <h5>Balance : $242,122</h5>
+                                                    <h5>Account Type : Joint Account </h5>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="ClientAccount pb-3">
+                                                    <h4><strong> Account 2</strong></h4>
+                                                    <h5>Name of Bank : Bank of America</h5>
+                                                    <h5>Balance : $242,122</h5>
+                                                    <h5>Account Type : Credit Card </h5>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="ClientAccount pb-3">
+                                                    <h4><strong> Account 3</strong></h4>
+                                                    <h5>Name of Bank : CHASE</h5>
+                                                    <h5>Balance : $242,122</h5>
+                                                    <h5>Account Type : Checking </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div> -->
+                                    <div class="newGraphTable">
+                                        <h2 style="padding-bottom: 20px;">Held Away Accounts</h2>
+                                        <div class="TableList">
+                                            <div class="mainTable ">
+                                                <table class="table table-bordered " style="width: 100%;">
+                                                    <thead>
+                                                        <tr>
+                                                     <th>Name of bank 
+                                                    </th>
+                                                    <th>Account type
+                                                    </th>
+                                                    <th>Balance</tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                     <td>Bank of America</td>
+                                                     <td>Current Account</td>
+                                                     <td>$ 4000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Bank of America</td>
+                                                            <td>Current Account</td>
+                                                            <td>$ 4000</td>
+                                                               </tr>
+                                                               <tr>
+                                                                <td>Bank of America</td>
+                                                                <td>Current Account</td>
+                                                                <td>$ 4000</td>
+                                                                   </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="Activity" role="tabpanel" aria-labelledby="Activity-tab">
+                                    <h2 style="padding-bottom: 20px;">Activity</h2>
+                                    <div class="recentAct">
+                                        <div class="searchBar">
+                                            <div class="searchLeft">
+                                                <div class="filterFlex filterFlexnew">
+                                                    <div class="SearchBox searchIcon">
+                                                        <form action="">
+                                                            <input type="text" style="width: 250px;" placeholder="Search">
+                                                            <a class="searchIconBtn" href="javaScipt:void(0)"><img
+                                                                    src="assets/images/search.svg" alt=""></a>
+                                                        </form>
+                                                        <a href="javaScript:void(0)">
+                                                            <img class="csv img-fluid" src="assets/images/csv.svg">Download</a>
+                                                    </div>
+                                                    <div class="allAct">
+                                                        <select name="activity" id="activity">
+                                                            <option value="activity0">Activity</option>
+                                                            <option value="activity1">DEP</option>
+                                                            <option value="activity2">WITH</option>
+                                                            <option value="activity3">FEES</option>
+                                                            <option value="activity4">AO</option>
+                                                            <option value="activity5">CNCL</option>
+                                                            <option value="activity6">REFR</option>
+                                                            
+                                                        </select>
+                                                        <select name="activity" id="activity" style="margin-left: 25px;">
+                                                            <option value="times0">All Times</option>
+                                                            <option value="times2">1 Month</option>
+                                                            <option value="times3">3 Months</option>
+                                                            <option value="times4">6 months</option>
+                                                            <option value="times5">1 Year</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="TableList">
+                                            <div class="mainTable ">
+                                                <table class="table table-bordered " style="width: 100%;">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><a href="javascript:void(0)" class="colorTer">FEES</a></td>
+                                                            <td>01|12|2020</td>
+                                                            <td>July Fee billings run ready to excute.</td>
+                                                            <td><a href="javascript:void(0)" class="view">view</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:void(0)" class="colorTer">FEES</a></td>
+                                                            <td>01|12|2020</td>
+                                                            <td>July Fee billings run ready to excute.</td>
+                                                            <td><a href="javascript:void(0)" class="view">view</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:void(0)" class="colorTer">FEES</a></td>
+                                                            <td>01|12|2020</td>
+                                                            <td>July Fee billings run ready to excute.</td>
+                                                            <td><a href="javascript:void(0)" class="view">view</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="javascript:void(0)" class="colorTer">FEES</a></td>
+                                                            <td>01|12|2020</td>
+                                                            <td>July Fee billings run ready to excute.</td>
+                                                            <td><a href="javascript:void(0)" class="view">view</a></td>
+                                                        </tr>
+                    
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="Fees" role="tabpanel" aria-labelledby="Fees-tab">
+                                    <!-- <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="Small-Wrapper">
+                                                <div class="Filter">
+                                                    <div class="form-group">
+                                                        <label>From Date</label>
+                                                        <input type="date" class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>To Date</label>
+                                                        <input type="date" class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>&nbsp;</label>
+                                                        <button class="Button">Apply</button>
+                                                    </div>
+                                                </div>
+
+                                                <div class="HelpContent">
+                                                    <div class="clientName pb-3">
+                                                        <h4>Total Paid Fees : $10,000</h4>
+                                                        <h4>Total Months : 12Months</h4>
+                                                        <h4>Charges Every Month : $100</h4>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="aumData">
+                                                <div class="aumText">
+                                                    <h6 class="">AUM <span> (as of 12/04/2020)</span></h6>
+                                                </div>
+                                                <div class="aumRight">
+                                                    <div class="aumMonth">
+                                                        <ul class="ulAumSix">
+                                                            <li class="active">YTD</li>
+                                                            <li>3M</li>
+                                                            <li>6M</li>
+                                                            <li>1Y</li>
+                                                            <li>5Y</li>
+                                                            <li>ALL</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="aumMore">
+                                                        <a href="javaScript:void(0)">[ More ]</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="filterDay">
+                                                <div class="filterDay1">
+                                                    <h6>Day <span class="Red">-4.16%</span></h6>
+                                                </div>
+                                                <div class="filterDay1">
+                                                    <h6>Last 7 Day <span class="Red">-4.16%</span></h6>
+                                                </div>
+                                                <div class="filterDay1">
+                                                    <h6>Last 30 Day <span class="Red">-4.16%</span></h6>
+                                                </div>
+                                                <div class="filterDay1">
+                                                    <h6>Total Assets <span><strong></strong> $1.76M</span></h6>
+                                                </div>
+                                            </div>
+                                            <div id="graphdivTwo" style="height: 400px"></div>
+                                        </div>
+                                    </div> -->
+                                    <div class="newGraphTable">
+                                        <h2 style="padding-bottom: 20px;">Fee Billings</h2>
+                                        <div class="TableList">
+                                            <div class="mainTable ">
+                                                <table class="table table-bordered " style="width: 100%;">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name
+                                                            </th>
+                                                            <th>Description
+                                                            </th>
+                                                            <th>Type</th>
+                                                            <th>Frequency </th>
+                                                            <th>Flat Fee  </th>
+                                                            <th>Bill Type
+                                                            </th>
+                                                            <th># of Accounts</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                         <td>Mudani invest</td>
+                                                            <td>Good</td>
+                                                            <td>Flat</td>
+                                                            <td>$ 5</td>
+                                                            <td>$ 5</td>
+                                                            <td>In Arereas</td>
+                                                            <td>$ 2000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Mudani invest</td>
+                                                               <td>Good</td>
+                                                               <td>Flat</td>
+                                                               <td>$ 5</td>
+                                                               <td>$ 5</td>
+                                                               <td>In Arereas</td>
+                                                               <td>$ 2000</td>
+                                                           </tr>
+                                                           <tr>
+                                                            <td>Mudani invest</td>
+                                                               <td>Good</td>
+                                                               <td>Flat</td>
+                                                               <td>$ 5</td>
+                                                               <td>$ 5</td>
+                                                               <td>In Arereas</td>
+                                                               <td>$ 2000</td>
+                                                           </tr>
+                                                           <tr>
+                                                            <td>Mudani invest</td>
+                                                               <td>Good</td>
+                                                               <td>Flat</td>
+                                                               <td>$ 5</td>
+                                                               <td>$ 5</td>
+                                                               <td>In Arereas</td>
+                                                               <td>$ 2000</td>
+                                                           </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+<div class="createNewww">
+    <h2 style="padding: 40px 0px;">Create Schedule</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="Filter FilterSearch">
+                <div class="form-group">
+                    <label>Type of Schedule</label>
+                    <select id="" formControlName="adjustedFrequency" class="ant-input form-control forma">
+                        <option value="fee"> Flat Fee
+                        </option>
+                        <option value="AUM"> AUM %
+                        </option>
+                        <option value="AUM"> AUM % + Flat
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="Filter FilterSearch">
+                <div class="form-group">
+                    <label>Schedule Name</label>
+                    <input type="text" class="form-control forma" placeholder="Please name this schedule">                    
+                </div>
+            </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="Filter FilterSearch">
+            <div class="form-group">
+                <label>Flat Fee</label>
+                <input type="text" class="form-control forma" placeholder="$0">                    
+            </div>
+        </div>
+</div>
+<div class="col-md-4">
+    <div class="Filter FilterSearch">
+        <div class="form-group">
+            <label>description</label>
+            <textarea type="text" class="form-control forma" placeholder="description" style="height: 100px !important;min-height: auto !important;"></textarea>                  
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="Filter FilterSearch">
+        <div class="form-group">
+            <label>Subplan Name</label>
+            <input type="text" class="form-control forma" placeholder="Name">                    
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="Filter FilterSearch">
+        <div class="form-group">
+            <label>Subplan description</label>
+            <textarea type="text" class="form-control forma" placeholder="description" style="min-height: auto !important;    height: 100px !important;"></textarea>                  
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4">
+    <div class="Filter FilterSearch">
+        <div class="form-group Allul Allul1">
+            <label>Bill Timing</label>
+            <ul style="margin-top: 10px;">
+             <li><a href="javascript:void(0)" class="active">In Advance</a></li>
+             <li><a href="javascript:void(0)">In Arereas</a></li>
+         </ul>                  
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="Filter FilterSearch">
+        <div class="form-group Allul Allul2">
+            <label>Bill Timing</label>
+         <ul style="margin-top: 10px;">
+             <li><a href="javascript:void(0)">Monthly</a></li>
+             <li><a href="javascript:void(0)" class="active">Quarterly</a></li>
+             <li><a href="javascript:void(0)">Annual</a></li>
+         </ul>                  
+        </div>
+    </div>
+</div>
+<div class="col-sm-4" style="display: flex;
+align-items: flex-end; padding-bottom: 15px;">
+    <div class="Filter ">
+        <a href="javascript:void(0)" class="save">Save</a>
+    </div>
+</div>
+
+</div>
+                                    </div>
+                                </div>
+</div>
+                                <div class="tab-pane fade" id="Contact" role="tabpanel" aria-labelledby="Contact-tab">
+                                    <div class="HelpContent">
+                                        <div class="clientName clientName_address pb-3">
+                                            <h5>Name : Alison Maxwell</h5>
+                                            <h5>Phone Number : 123456789</h5>
+                                            <h5>Email Address : alison@gmail.com</h5>
+                                            <h5>Risk Tolerance : In Tolerance</h5>
+                                            <h5>Address :
+                                                <ul>
+                                                    <li>abc</li>
+                                                    <li>Location</li>
+                                                    <li>States</li>
+                                                    <li>Country</li>
+                                                    <li>Pin</li>
+                                                </ul>
+                                            </h5>
+                                            <h5>Liquid Net Worth : $5000</h5>
+                                            <h5>Annual Income : $10000</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Client Inner tab end -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

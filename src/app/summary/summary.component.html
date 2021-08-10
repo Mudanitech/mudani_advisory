@@ -1,0 +1,888 @@
+<app-header></app-header>
+
+<div class="WrapperArea">
+    <div class="WrapperBox">
+        <div class="Small-Wrapper">
+            <div class="HelpArea">
+                <div class="DisFlex">
+                    <h1></h1>
+                    <ul class="nav nav-tabs MainTabAll" id="myTab" role="tablist">
+                        <li class="nav-item ">
+                            <a class="nav-link active" id="Client-summary-tab" data-toggle="tab" href="#Client-summary"
+                                role="tab" aria-controls="Client-summary" aria-selected="true">Client</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " id="AUM-summary-tab" data-toggle="tab" href="#AUM-summary" role="tab"
+                                aria-controls="AUM-summary" aria-selected="false">AUM</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " id="Held-away-tab" data-toggle="tab" href="#Held-away" role="tab"
+                                aria-controls="Held-away" aria-selected="false">Held-away Acoount</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="Client-summary" role="tabpanel"
+                        aria-labelledby="Client-summary-tab">
+                        <div class="HelpContent">
+                            <div class="totalClient DisFlex">
+                                <div class="retailClient">
+                                    <h2 class="sky gm"> Welcome back, <br>
+                      Dan</h2>
+                                </div>
+                                <div class="retailClient DisFlex">
+                                    <li>
+                                        <h5><span class="sky d-block">309</span> Clients</h5>
+                                    </li>
+                                    <li>
+                                        <h5><span class="sky d-block">$7,856,100</span> AUM</h5>
+                                    </li>
+                                    <li>
+                                        <h5><span class="sky d-block">7.33%</span>Change</h5>
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chartStarted row">
+                            <div class="col-md-12">
+                                <div class="aumData">
+                                    <div class="aumText">
+                                        <h6 class="">AUM <span> (as of 12/04/2020)</span></h6>
+                                    </div>
+                                </div>
+                                <div class="filterDay">
+                                    <div class="filterDay1">
+                                        <h6>Day <span class="Red">-4.16%</span></h6>
+                                    </div>
+                                    <div class="filterDay1">
+                                        <h6>Last 7 Day <span class="Red">-4.16%</span></h6>
+                                    </div>
+                                    <div class="filterDay1">
+                                        <h6>Last 30 Day <span class="Red">-4.16%</span></h6>
+                                    </div>
+                                    <div class="filterDay1">
+                                        <h6>Total Assets <span><strong></strong> $1.76M</span></h6>
+                                    </div>
+                                </div>
+                                <div id="chartdiv" style="height: 400px;"></div>
+                                <div class="aumMonth">
+                                    <ul class="ulAumOne">
+                                        <li>5D</li>
+                                        <li>1M</li>
+                                        <li>6M</li>
+                                        <li class="active">YTD</li>
+                                        <li>1Y</li>
+                                        <li>5Y</li>
+                                        <li>MAX </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- <div class="col-md-6">
+                                <h2 class="sky text-center pt-4">Total AUM</h2>
+                                <div class="aumData">
+                                    <div class="aumText">
+                                        <h6 class="">AUM <span> (as of 12/04/2020)</span></h6>
+                                    </div>
+                                    <div class="aumRight">
+                                        <div class="aumMonth">
+                                            <ul class="ulAumTwo">
+                                                <li class="active">YTD</li>
+                                                <li>3M</li>
+                                                <li>6M</li>
+                                                <li>1Y</li>
+                                                <li>5Y</li>
+                                                <li>ALL</li>
+                                            </ul>
+                                        </div>
+                                        <div class="aumMore">
+                                            <a href="javaScript:void(0)">[ More ]</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="filterDay">
+                                    <div class="filterDay1">
+                                        <h6>Day <span class="Red">-4.16%</span></h6>
+                                    </div>
+                                    <div class="filterDay1">
+                                        <h6>Last 7 Day <span class="Red">-4.16%</span></h6>
+                                    </div>
+                                    <div class="filterDay1">
+                                        <h6>Last 30 Day <span class="Red">-4.16%</span></h6>
+                                    </div>
+                                    <div class="filterDay1">
+                                        <h6>Total Assets <span><strong></strong> $1.76M</span></h6>
+                                    </div>
+                                </div>
+                                <div id="chartdivTwo" style="height: 400px"></div>
+                            </div>
+                            <div class="col-md-6 pt-5">
+                                <h2 class="sky text-center pt-4">Total $ Held Away Account </h2>
+                                <div class="aumData ">
+                                    <div class="aumText">
+                                        <h6 class="">AUM <span> (as of 12/04/2020)</span></h6>
+                                    </div>
+                                    <div class="aumRight">
+                                        <div class="aumMonth">
+                                            <ul class="ulAumThree">
+                                                <li class="active">YTD</li>
+                                                <li>3M</li>
+                                                <li>6M</li>
+                                                <li>1Y</li>
+                                                <li>5Y</li>
+                                                <li>ALL</li>
+                                            </ul>
+                                        </div>
+                                        <div class="aumMore">
+                                            <a href="javaScript:void(0)">[ More ]</a>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                                <div class="filterDay">
+                                    <div class="filterDay1">
+                                        <h6>Day <span class="Red">-4.16%</span></h6>
+                                    </div>
+                                    <div class="filterDay1">
+                                        <h6>Last 7 Day <span class="Red">-4.16%</span></h6>
+                                    </div>
+                                    <div class="filterDay1">
+                                        <h6>Last 30 Day <span class="Red">-4.16%</span></h6>
+                                    </div>
+                                    <div class="filterDay1">
+                                        <h6>Total Assets <span><strong></strong> $1.76M</span></h6>
+                                    </div>
+                                </div>
+                                <div id="chartdivThree" style="height: 400px"></div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="AUM-summary" role="tabpanel" aria-labelledby="AUM-summary-tab">
+                        <div class="HelpContent">
+                            <div class="totalClient DisFlex">
+                                <div class="retailClient">
+                                    <h2 class="sky gm"> Welcome back, <br>
+                      Dan</h2>
+                                </div>
+                                <div class="retailClient DisFlex">
+                                    <li>
+                                        <h5><span class="sky d-block">30</span> Clients</h5>
+                                    </li>
+                                    <li>
+                                        <h5><span class="sky d-block">$6,856,100</span> AUM</h5>
+                                    </li>
+                                    <li>
+                                        <h5><span class="sky d-block">3.33%</span>Change</h5>
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chartStarted row">
+                            <div class="col-md-12">
+                                <div class="aumData">
+                                    <div class="aumText">
+                                        <h6 class="">AUM <span> (as of 12/04/2020)</span></h6>
+                                    </div>
+                                </div>
+                                <div class="filterDay">
+                                    <div class="filterDay1">
+                                        <h6>Day <span class="Red">-4.16%</span></h6>
+                                    </div>
+                                    <div class="filterDay1">
+                                        <h6>Last 7 Day <span class="Red">-4.16%</span></h6>
+                                    </div>
+                                    <div class="filterDay1">
+                                        <h6>Last 30 Day <span class="Red">-4.16%</span></h6>
+                                    </div>
+                                    <div class="filterDay1">
+                                        <h6>Total Assets <span><strong></strong> $1.76M</span></h6>
+                                    </div>
+                                </div>
+                                <div id="chartdivTwo" style="height: 400px;"></div>
+                                <div class="aumMonth">
+                                    <ul class="ulAumTwo">
+                                        <li>5D</li>
+                                        <li>1M</li>
+                                        <li>6M</li>
+                                        <li class="active">YTD</li>
+                                        <li>1Y</li>
+                                        <li>5Y</li>
+                                        <li>MAX </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="Held-away" role="tabpanel" aria-labelledby="Held-away-tab">
+                        <div class="HelpContent">
+                            <div class="totalClient DisFlex">
+                                <div class="retailClient">
+                                    <h2 class="sky gm"> Welcome back, <br>
+                      Dan</h2>
+                                </div>
+                                <div class="retailClient DisFlex">
+                                    <li>
+                                        <h5><span class="sky d-block">30</span> Clients</h5>
+                                    </li>
+                                    <li>
+                                        <h5><span class="sky d-block">$8,856,100</span> AUM</h5>
+                                    </li>
+                                    <li>
+                                        <h5><span class="sky d-block">3.33%</span>Change</h5>
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chartStarted row">
+                            <div class="col-md-12">
+                                <div class="aumData">
+                                    <div class="aumText">
+                                        <h6 class="">AUM <span> (as of 12/04/2020)</span></h6>
+                                    </div>
+                                </div>
+                                <div class="filterDay">
+                                    <div class="filterDay1">
+                                        <h6>Day <span class="Red">-4.16%</span></h6>
+                                    </div>
+                                    <div class="filterDay1">
+                                        <h6>Last 7 Day <span class="Red">-4.16%</span></h6>
+                                    </div>
+                                    <div class="filterDay1">
+                                        <h6>Last 30 Day <span class="Red">-4.16%</span></h6>
+                                    </div>
+                                    <div class="filterDay1">
+                                        <h6>Total Assets <span><strong></strong> $1.76M</span></h6>
+                                    </div>
+                                </div>
+                                <div id="chartdivThree" style="height: 400px;"></div>
+                                <div class="aumMonth">
+                                    <ul class="ulAumThree">
+                                        <li>5D</li>
+                                        <li>1M</li>
+                                        <li>6M</li>
+                                        <li class="active">YTD</li>
+                                        <li>1Y</li>
+                                        <li>5Y</li>
+                                        <li>MAX </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <h2 class="sky">Recent Activity:</h2>
+
+                <!-- <div class="HelpArea">
+    <ul class="nav nav-tabs MainTabAll" id="myTab" role="tablist">
+        <li class="nav-item ">
+            <a class="nav-link active" id="Trade-summary-tab" data-toggle="tab" href="#Trade-summary" role="tab" aria-controls="Trade-summary" aria-selected="true">Orders</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " id="Deposits-summary-tab" data-toggle="tab" href="#Deposits-summary" role="tab" aria-controls="Deposits-summary" aria-selected="false">Deposits</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " id="Withdrawals-summary-tab" data-toggle="tab" href="#Withdrawals-summary" role="tab" aria-controls="Withdrawals-summary" aria-selected="false">Withdrawals</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="Stock-summary-tab" data-toggle="tab" href="#Stock-summary" role="tab" aria-controls="Stock-summary" aria-selected="false">Stock Rewards</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="Dividents-summary-tab" data-toggle="tab" href="#Dividents-summary" role="tab" aria-controls="Dividents-summary" aria-selected="false">Dividends</a>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="Trade-summary" role="tabpanel" aria-labelledby="Trade-summary-tab">
+            <div class="TradeConfirmation mb-5">
+                <div class="mainTrade">
+                    <h4 class="pb-2">Orders <span>25, September</span></h4>
+                    <h5>Description:</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid non illum, mollitia
+                        eos ipsa harum, cupiditate ex optio doloremque animi voluptatem debitis adipisci sapiente saepe hic
+                        architecto pariatur dignissimos repellat.</p>
+                    <h5>Status : Pending <span class="Green">$5</span></h5>
+                </div>
+            </div>
+            <div class="TradeConfirmation mb-5">
+                <div class="mainTrade">
+                    <h4 class="pb-2">Orders <span>25, September</span></h4>
+                    <h5>Description:</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid non illum, mollitia
+                        eos ipsa harum, cupiditate ex optio doloremque animi voluptatem debitis adipisci sapiente saepe hic
+                        architecto pariatur dignissimos repellat.</p>
+                    <h5>Status : Pending <span class="Green">$5</span></h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="Deposits-summary" role="tabpanel" aria-labelledby="Deposits-summary-tab">
+            <div class="TradeConfirmation mb-5">
+                <div class="mainTrade">
+                    <h4 class="pb-2">Deposits <span>25, September</span></h4>
+                    <h5>Description:</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid non illum, mollitia
+                        eos ipsa harum, cupiditate ex optio doloremque animi voluptatem debitis adipisci sapiente saepe hic
+                        architecto pariatur dignissimos repellat.</p>
+                    <h5>Status : Pending <span class="Green">$5</span></h5>
+                </div>
+            </div>
+            <div class="TradeConfirmation mb-5">
+                <div class="mainTrade">
+                    <h4 class="pb-2">Deposits <span>25, September</span></h4>
+                    <h5>Description:</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid non illum, mollitia
+                        eos ipsa harum, cupiditate ex optio doloremque animi voluptatem debitis adipisci sapiente saepe hic
+                        architecto pariatur dignissimos repellat.</p>
+                    <h5>Status : Pending <span class="Green">$5</span></h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="Withdrawals-summary" role="tabpanel" aria-labelledby="Withdrawals-summary-tab">
+           <div class="TradeConfirmation mb-5">
+                <div class="mainTrade">
+                    <h4 class="pb-2">Withdrawals <span>25, September</span></h4>
+                    <h5>Description:</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid non illum, mollitia
+                        eos ipsa harum, cupiditate ex optio doloremque animi voluptatem debitis adipisci sapiente saepe hic
+                        architecto pariatur dignissimos repellat.</p>
+                    <h5>Status : Pending <span class="Green">$5</span></h5>
+                </div>
+            </div>
+            <div class="TradeConfirmation mb-5">
+                <div class="mainTrade">
+                    <h4 class="pb-2">Withdrawals <span>25, September</span></h4>
+                    <h5>Description:</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid non illum, mollitia
+                        eos ipsa harum, cupiditate ex optio doloremque animi voluptatem debitis adipisci sapiente saepe hic
+                        architecto pariatur dignissimos repellat.</p>
+                    <h5>Status : Pending <span class="Green">$5</span></h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="Stock-summary" role="tabpanel" aria-labelledby="Stock-summary-tab">
+           <div class="TradeConfirmation mb-5">
+                <div class="mainTrade">
+                    <h4 class="pb-2">Stock <span>25, September</span></h4>
+                    <h5>Description:</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid non illum, mollitia
+                        eos ipsa harum, cupiditate ex optio doloremque animi voluptatem debitis adipisci sapiente saepe hic
+                        architecto pariatur dignissimos repellat.</p>
+                    <h5>Status : Pending <span class="Green">$5</span></h5>
+                </div>
+            </div>
+            <div class="TradeConfirmation mb-5">
+                <div class="mainTrade">
+                    <h4 class="pb-2">Stock <span>25, September</span></h4>
+                    <h5>Description:</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid non illum, mollitia
+                        eos ipsa harum, cupiditate ex optio doloremque animi voluptatem debitis adipisci sapiente saepe hic
+                        architecto pariatur dignissimos repellat.</p>
+                    <h5>Status : Pending <span class="Green">$5</span></h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="Dividents-summary" role="tabpanel" aria-labelledby="Dividents-summary-tab">
+           <div class="TradeConfirmation mb-5">
+                <div class="mainTrade">
+                    <h4 class="pb-2">Dividents <span>25, September</span></h4>
+                    <h5>Description:</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid non illum, mollitia
+                        eos ipsa harum, cupiditate ex optio doloremque animi voluptatem debitis adipisci sapiente saepe hic
+                        architecto pariatur dignissimos repellat.</p>
+                    <h5>Status : Pending <span class="Green">$5</span></h5>
+                </div>
+            </div>
+            <div class="TradeConfirmation mb-5">
+                <div class="mainTrade">
+                    <h4 class="pb-2">Dividents <span>25, September</span></h4>
+                    <h5>Description:</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid non illum, mollitia
+                        eos ipsa harum, cupiditate ex optio doloremque animi voluptatem debitis adipisci sapiente saepe hic
+                        architecto pariatur dignissimos repellat.</p>
+                    <h5>Status : Pending <span class="Green">$5</span></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+                <div class="recentAct">
+                    <div class="searchBar">
+                        <div class="searchLeft">
+                            <div class="filterFlex filterFlexnew">
+                                <div class="SearchBox searchIcon">
+                                    <form action="">
+                                        <input type="text" style="width: 250px;" placeholder="Search">
+                                        <a class="searchIconBtn" href="javaScipt:void(0)"><img
+                                                src="assets/images/search.svg" alt=""></a>
+                                    </form>
+
+                                </div>
+                                <div class="allAct">
+                                    <select name="activity" id="activity">
+                                        <option value="activity0">All Activity Types</option>
+                                        <option value="activity1">Orders</option>
+                                        <option value="activity2">Deposits</option>
+                                        <option value="activity3">Withdrawals</option>
+                                        <option value="activity4">Stock Rewards</option>
+                                        <option value="activity4">Dividends</option>
+                                    </select>
+                                    <select name="activity" id="activity" style="margin-left: 25px;">
+                                        <option value="times0">All Times</option>
+                                        <option value="times2">1 Month</option>
+                                        <option value="times3">3 Months</option>
+                                        <option value="times4">6 months</option>
+                                        <option value="times5">1 Year</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="TableList">
+                        <div class="mainTable ">
+                            <table class="table table-bordered " style="width: 100%;">
+                                <tbody>
+                                    <tr>
+                                        <td><a href="javascript:void(0)" class="colorTer">FEES</a></td>
+                                        <td>01|12|2020</td>
+                                        <td>July Fee billings run ready to excute.</td>
+                                        <td><a href="javascript:void(0)" class="view">view</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="javascript:void(0)" class="colorTer">FEES</a></td>
+                                        <td>01|12|2020</td>
+                                        <td>July Fee billings run ready to excute.</td>
+                                        <td><a href="javascript:void(0)" class="view">view</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="javascript:void(0)" class="colorTer">FEES</a></td>
+                                        <td>01|12|2020</td>
+                                        <td>July Fee billings run ready to excute.</td>
+                                        <td><a href="javascript:void(0)" class="view">view</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="javascript:void(0)" class="colorTer">FEES</a></td>
+                                        <td>01|12|2020</td>
+                                        <td>July Fee billings run ready to excute.</td>
+                                        <td><a href="javascript:void(0)" class="view">view</a></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="AllnewRows">
+                    <div class="newRowsLeft">
+                        <h2 class="sky" style="padding-bottom: 40px;">Client Fees Summary:</h2>
+                        <div class="chartStarted row">
+                            <div class="col-md-12">
+                                <div class="filterTable">
+                                    <div class="TableList">
+                                        <div class="mainTable ">
+                                            <table class="table table-bordered " style="width: 100%;">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width: 40%;">Account Type</th>
+                                                        <th class="FilterDropdown" style="width: 40%;"><a
+                                                                style="color:#fff;" href="javaScript:void(0)">Amount <i
+                                                                    class="fa fa-filter" aria-hidden="true"></i> </a>
+                                                            <ul class="managedDropdownShow summaryDropdownShow">
+                                                                <!-- <h5>Filter Option</h5> -->
+                                                                <li><a href="javaScript:Void(0)">1 Month</a> </li>
+                                                                <li><a href="javaScript:Void(0)">3 Month</a> </li>
+                                                                <li><a href="javaScript:Void(0)">6 Month</a> </li>
+                                                                <li><a href="javaScript:Void(0)">1 Year</a> </li>
+                                                                <li><a href="javaScript:Void(0)">All</a> </li>
+                                                                <!-- <button class="Button apply_btn" style="width: 100%;">Apply</button> -->
+                                                            </ul>
+
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Mudani Invest Starter</td>
+                                                        <td>$567876</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mudani Invest Gold
+                                                        </td>
+                                                        <td>$567876</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mudani Robo Core
+                                                        </td>
+                                                        <td>$567876</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mudani Robo Baskets
+                                                        </td>
+                                                        <td>$567876</td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="col-md-6">
+            <h2 class="sky text-center pt-4">Client Fees Graph</h2>
+            <div class="aumData">
+                <div class="aumText">
+                    <h6 class="">AUM <span> (as of 12/04/2020)</span></h6>
+                </div>
+                <div class="aumRight">
+                    <div class="aumMonth">
+                        <ul class="ulAumFour">
+                            <li class="active">YTD</li>
+                            <li>3M</li>
+                            <li>6M</li>
+                            <li>1Y</li>
+                            <li>5Y</li>
+                            <li>ALL</li>
+                        </ul>
+                    </div>
+                    <div class="aumMore">
+                        <a href="javaScript:void(0)">[ More ]</a>
+                    </div>
+                </div>
+            </div>
+            <div class="filterDay">
+                <div class="filterDay1">
+                    <h6>Day <span class="Red">-4.16%</span></h6>
+                </div>
+                <div class="filterDay1">
+                    <h6>Last 7 Day <span class="Red">-4.16%</span></h6>
+                </div>
+                <div class="filterDay1">
+                    <h6>Last 30 Day <span class="Red">-4.16%</span></h6>
+                </div>
+                <div class="filterDay1">
+                    <h6>Total Assets <span><strong></strong> $1.76M</span></h6>
+                </div>
+            </div>
+            <div id="chartdivFour" style="height: 400px"></div>
+        </div> -->
+                        </div>
+                    </div>
+
+
+                    <div class="topClients">
+                        <h2 class="sky " style="padding-bottom: 40px;">Top Clients</h2>
+                        <div class="TableList">
+                            <div class="mainTable ">
+                                <table class="table table-bordered " style="width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>YTD Change</th>
+                                            <th>AUM <span style="margin-left:4px;position: relative;
+                                                bottom: 1px;"><i class="fa fa-sort-down"></i></span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                <tr>
+                                    <td>Calvin</td>
+                                    <td><span class="arrow"><img src="assets/images/up-arrow.svg" alt=""></span> 17.60%</td>
+                                    <td>$5,601,923</td> 
+                                </tr>
+                                <tr>
+                                    <td>Den</td>
+                                    <td><span class="arrow"><img src="assets/images/up-arrow.svg" alt=""></span> 17.60%</td>
+                                    <td>$5,601,923</td> 
+                                </tr>
+                                <tr>
+                                    <td>Calvin</td>
+                                    <td><span class="arrow"><img src="assets/images/up-arrow.svg" alt=""></span> 17.60%</td>
+                                    <td>$5,601,923</td> 
+                                </tr>
+                                <tr>
+                                    <td>Den</td>
+                                    <td><span class="arrow"><img src="assets/images/up-arrow.svg" alt=""></span> 17.60%</td>
+                                    <td>$5,601,923</td> 
+                                </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                
+                </div>
+                <div class="newRowsRight">
+                    <h2 class="sky " style="padding-top:25px">Top Holdings</h2>
+
+
+                    <div class="HelpArea pt-3">
+                        <div class="enireAll">
+                            <ul class="nav nav-tabs MainTabAll" id="myTab" role="tablist">
+                                <li class="nav-item ">
+                                    <a class="nav-link active" id="Self-summary-tab" data-toggle="tab"
+                                        href="#Self-summary" role="tab" aria-controls="Self-summary"
+                                        aria-selected="true">Self-Directed</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link " id="Managed-summary-tab" data-toggle="tab"
+                                        href="#Managed-summary" role="tab" aria-controls="Managed-summary"
+                                        aria-selected="true">Managed</a>
+                                </li>
+                            </ul>
+                            <div class="enterKey enterKeynew">
+                                <div class="SearchBox searchIcon">
+                                    <form action="">
+                                        <input type="text" style="width: 250px;" placeholder="Search">
+                                        <a class="searchIconBtn" href="javaScipt:void(0)"><img
+                                                src="assets/images/search.svg" alt=""></a>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="Self-summary" role="tabpanel"
+                                aria-labelledby="Self-summary-tab">
+                                <div class="TableList" style="padding-top: 40px;">
+                                    <div class="mainTable ">
+                                        <table class="table table-bordered " style="width: 100%;">
+                            
+                                            <tbody>
+                                        <tr>
+                                        <td>
+                                            <img src="assets/images/apple.svg" class="apple" alt="" style="margin: 0 auto;width: 25px;display: block;">
+                                          <p style="padding: 5px 0px;"> Apple Inc.</p>
+                                            <a href="javascript:void(0)" class="tick" style="font-size:12px;padding: 2px 5px;">AAPL</a>
+                                            <h4 class="dollar">$2,340,545</h4>
+                                        </td>
+                                        <td>
+                                            <img src="assets/images/apple.svg" class="apple" alt="" style="margin: 0 auto;width: 25px;display: block;">
+                                          <p style="padding: 5px 0px;"> Apple Inc.</p>
+                                            <a href="javascript:void(0)" class="tick" style="font-size:12px;padding: 2px 5px;">AAPL</a>
+                                            <h4 class="dollar">$2,340,545</h4>
+                                        </td>
+                                        <td>
+                                            <img src="assets/images/apple.svg" class="apple" alt="" style="margin: 0 auto;width: 25px;display: block;">
+                                          <p style="padding: 5px 0px;"> Apple Inc.</p>
+                                            <a href="javascript:void(0)" class="tick" style="font-size:12px;padding: 2px 5px;">AAPL</a>
+                                            <h4 class="dollar">$2,340,545</h4>
+                                        </td>
+                                        <td>
+                                            <img src="assets/images/apple.svg" class="apple" alt="" style="margin: 0 auto;width: 25px;display: block;">
+                                          <p style="padding: 5px 0px;"> Apple Inc.</p>
+                                            <a href="javascript:void(0)" class="tick" style="font-size:12px;padding: 2px 5px;">AAPL</a>
+                                            <h4 class="dollar">$2,340,545</h4>
+                                        </td>
+                                        <td>
+                                            <img src="assets/images/apple.svg" class="apple" alt="" style="margin: 0 auto;width: 25px;display: block;">
+                                          <p style="padding: 5px 0px;"> Apple Inc.</p>
+                                            <a href="javascript:void(0)" class="tick" style="font-size:12px;padding: 2px 5px;">AAPL</a>
+                                            <h4 class="dollar">$2,340,545</h4>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <img src="assets/images/apple.svg" class="apple" alt="" style="margin: 0 auto;width: 25px;display: block;">
+                                              <p style="padding: 5px 0px;"> Apple Inc.</p>
+                                                <a href="javascript:void(0)" class="tick" style="font-size:12px;padding: 2px 5px;">AAPL</a>
+                                                <h4 class="dollar">$2,340,545</h4>
+                                            </td>
+                                            <td>
+                                                <img src="assets/images/apple.svg" class="apple" alt="" style="margin: 0 auto;width: 25px;display: block;">
+                                              <p style="padding: 5px 0px;"> Apple Inc.</p>
+                                                <a href="javascript:void(0)" class="tick" style="font-size:12px;padding: 2px 5px;">AAPL</a>
+                                                <h4 class="dollar">$2,340,545</h4>
+                                            </td>
+                                            <td>
+                                                <img src="assets/images/apple.svg" class="apple" alt="" style="margin: 0 auto;width: 25px;display: block;">
+                                              <p style="padding: 5px 0px;"> Apple Inc.</p>
+                                                <a href="javascript:void(0)" class="tick" style="font-size:12px;padding: 2px 5px;">AAPL</a>
+                                                <h4 class="dollar">$2,340,545</h4>
+                                            </td>
+                                            <td>
+                                                <img src="assets/images/apple.svg" class="apple" alt="" style="margin: 0 auto;width: 25px;display: block;">
+                                              <p style="padding: 5px 0px;"> Apple Inc.</p>
+                                                <a href="javascript:void(0)" class="tick" style="font-size:12px;padding: 2px 5px;">AAPL</a>
+                                                <h4 class="dollar">$2,340,545</h4>
+                                            </td>
+                                            <td>
+                                                <img src="assets/images/apple.svg" class="apple" alt="" style="margin: 0 auto;width: 25px;display: block;">
+                                              <p style="padding: 5px 0px;"> Apple Inc.</p>
+                                                <a href="javascript:void(0)" class="tick" style="font-size:12px;padding: 2px 5px;">AAPL</a>
+                                                <h4 class="dollar">$2,340,545</h4>
+                                            </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <img src="assets/images/apple.svg" class="apple" alt="" style="margin: 0 auto;width: 25px;display: block;">
+                                                  <p style="padding: 5px 0px;"> Apple Inc.</p>
+                                                    <a href="javascript:void(0)" class="tick" style="font-size:12px;padding: 2px 5px;">AAPL</a>
+                                                    <h4 class="dollar">$2,340,545</h4>
+                                                </td>
+                                                <td>
+                                                    <img src="assets/images/apple.svg" class="apple" alt="" style="margin: 0 auto;width: 25px;display: block;">
+                                                  <p style="padding: 5px 0px;"> Apple Inc.</p>
+                                                    <a href="javascript:void(0)" class="tick" style="font-size:12px;padding: 2px 5px;">AAPL</a>
+                                                    <h4 class="dollar">$2,340,545</h4>
+                                                </td>
+                                                <td>
+                                                    <img src="assets/images/apple.svg" class="apple" alt="" style="margin: 0 auto;width: 25px;display: block;">
+                                                  <p style="padding: 5px 0px;"> Apple Inc.</p>
+                                                    <a href="javascript:void(0)" class="tick" style="font-size:12px;padding: 2px 5px;">AAPL</a>
+                                                    <h4 class="dollar">$2,340,545</h4>
+                                                </td>
+                                                <td>
+                                                    <img src="assets/images/apple.svg" class="apple" alt="" style="margin: 0 auto;width: 25px;display: block;">
+                                                  <p style="padding: 5px 0px;"> Apple Inc.</p>
+                                                    <a href="javascript:void(0)" class="tick" style="font-size:12px;padding: 2px 5px;">AAPL</a>
+                                                    <h4 class="dollar">$2,340,545</h4>
+                                                </td>
+                                                <td>
+                                                    <img src="assets/images/apple.svg" class="apple" alt="" style="margin: 0 auto;width: 25px;display: block;">
+                                                  <p style="padding: 5px 0px;"> Apple Inc.</p>
+                                                    <a href="javascript:void(0)" class="tick" style="font-size:12px;padding: 2px 5px;">AAPL</a>
+                                                    <h4 class="dollar">$2,340,545</h4>
+                                                </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                              
+                            </div>
+                            <div class="tab-pane fade" id="Managed-summary" role="tabpanel"
+                                aria-labelledby="Managed-summary-tab">
+                                <div class="TableList" style="padding-top: 40px;">
+                                    <div class="mainTable ">
+                                        <table class="table table-bordered " style="width: 100%;">
+                            
+                                            <tbody>
+                                        <tr>
+                                        <td>
+                                            <a href="javascript:void(0)" class="tick">Amez</a>
+                                            <h4 class="dollar">$2,340,545</h4>
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0)" class="tick">Amez</a>
+                                            <h4 class="dollar">$2,340,545</h4>
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0)" class="tick">Amez</a>
+                                            <h4 class="dollar">$2,340,545</h4>
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0)" class="tick">Amez</a>
+                                            <h4 class="dollar">$2,340,545</h4>
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0)" class="tick">Amez</a>
+                                            <h4 class="dollar">$2,340,545</h4>
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0)" class="tick">Amez</a>
+                                            <h4 class="dollar">$2,340,545</h4>
+                                        </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <a href="javascript:void(0)" class="tick">Amez</a>
+                                                <h4 class="dollar">$2,340,545</h4>
+                                            </td>
+                                            <td>
+                                                <a href="javascript:void(0)" class="tick">Amez</a>
+                                                <h4 class="dollar">$2,340,545</h4>
+                                            </td>
+                                            <td>
+                                                <a href="javascript:void(0)" class="tick">Amez</a>
+                                                <h4 class="dollar">$2,340,545</h4>
+                                            </td>
+                                            <td>
+                                                <a href="javascript:void(0)" class="tick">Amez</a>
+                                                <h4 class="dollar">$2,340,545</h4>
+                                            </td>
+                                            <td>
+                                                <a href="javascript:void(0)" class="tick">Amez</a>
+                                                <h4 class="dollar">$2,340,545</h4>
+                                            </td>
+                                            <td>
+                                                <a href="javascript:void(0)" class="tick">Amez</a>
+                                                <h4 class="dollar">$2,340,545</h4>
+                                            </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <a href="javascript:void(0)" class="tick">Amez</a>
+                                                    <h4 class="dollar">$2,340,545</h4>
+                                                </td>
+                                                <td>
+                                                    <a href="javascript:void(0)" class="tick">Amez</a>
+                                                    <h4 class="dollar">$2,340,545</h4>
+                                                </td>
+                                                <td>
+                                                    <a href="javascript:void(0)" class="tick">Amez</a>
+                                                    <h4 class="dollar">$2,340,545</h4>
+                                                </td>
+                                                <td>
+                                                    <a href="javascript:void(0)" class="tick">Amez</a>
+                                                    <h4 class="dollar">$2,340,545</h4>
+                                                </td>
+                                                <td>
+                                                    <a href="javascript:void(0)" class="tick">Amez</a>
+                                                    <h4 class="dollar">$2,340,545</h4>
+                                                </td>
+                                                <td>
+                                                    <a href="javascript:void(0)" class="tick">Amez</a>
+                                                    <h4 class="dollar">$2,340,545</h4>
+                                                </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <a href="javascript:void(0)" class="tick">Amez</a>
+                                                        <h4 class="dollar">$2,340,545</h4>
+                                                    </td>
+                                                    <td>
+                                                        <a href="javascript:void(0)" class="tick">Amez</a>
+                                                        <h4 class="dollar">$2,340,545</h4>
+                                                    </td>
+                                                    <td>
+                                                        <a href="javascript:void(0)" class="tick">Amez</a>
+                                                        <h4 class="dollar">$2,340,545</h4>
+                                                    </td>
+                                                    <td>
+                                                        <a href="javascript:void(0)" class="tick">Amez</a>
+                                                        <h4 class="dollar">$2,340,545</h4>
+                                                    </td>
+                                                    <td>
+                                                        <a href="javascript:void(0)" class="tick">Amez</a>
+                                                        <h4 class="dollar">$2,340,545</h4>
+                                                    </td>
+                                                    <td>
+                                                        <a href="javascript:void(0)" class="tick">Amez</a>
+                                                        <h4 class="dollar">$2,340,545</h4>
+                                                    </td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

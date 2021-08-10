@@ -1,0 +1,127 @@
+<app-header></app-header>
+
+<div class="WrapperArea">
+    <div class="WrapperBox">
+        <div class="Small-Wrapper">
+            <div class="newGraphTable">
+
+                <div class="createNewww">
+                    <h2 style="padding: 40px 0px;">Create Schedule</h2>
+                    <form [formGroup]="form">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="Filter FilterSearch">
+                                    <div class="form-group">
+                                        <label>Type of Schedule</label>
+                                        <!-- <select id="" formControlName="type" class="ant-input form-control forma">
+                                            <option value="1"> Flat Fee
+                                            </option>
+                                            <option value="2"> AUM %
+                                            </option>
+                                            <option value="3"> AUM % + Flat
+                                            </option>
+                                        </select> -->
+                                        <select id="" formControlName="type" class="ant-input form-control forma">
+                                            <option value="1"> Self Direct Account
+                                            </option>
+                                            <option value="2">Managed Account
+                                            </option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="Filter FilterSearch">
+                                    <div class="form-group">
+                                        <label>Schedule Name</label>
+                                        <input type="text" formControlName="name" class="form-control forma"
+                                            placeholder="Please name this schedule">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="Filter FilterSearch">
+                                    <div class="form-group">
+                                        <label>Flat Fee</label>
+                                        <input type="text" formControlName="price" class="form-control forma"
+                                            placeholder="$0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="Filter FilterSearch">
+                                    <div class="form-group">
+                                        <label>description</label>
+                                        <textarea type="text" formControlName="description" class="form-control forma"
+                                            placeholder="description"
+                                            style="height: 100px !important;min-height: auto !important;"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="col-md-4">
+                                <div class="Filter FilterSearch">
+                                    <div class="form-group">
+                                        <label>Subplan Name</label>
+                                        <input type="text" class="form-control forma" placeholder="Name">
+                                    </div>
+                                </div>
+                            </div> -->
+                            <!-- <div class="col-md-4">
+                                <div class="Filter FilterSearch">
+                                    <div class="form-group">
+                                        <label>Subplan description</label>
+                                        <textarea type="text" class="form-control forma" placeholder="description"
+                                            style="min-height: auto !important;    height: 100px !important;"></textarea>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                            <div class="col-md-4">
+                                <div class="Filter FilterSearch">
+                                    <div class="form-group Allul Allul1">
+                                        <label>Bill Timing</label>
+                                        <ul style="margin-top: 10px;">
+                                            <li><a (click)="changeBillTime('1')"
+                                                    [className]="billTime=='1' ? 'active' : 'inactive'"
+                                                    href="javascript:void(0)">In Advance</a></li>
+                                            <li><a (click)="changeBillTime('2')"
+                                                    [className]="billTime=='2' ? 'active' : 'inactive'"
+                                                    href="javascript:void(0)">In Arereas</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="Filter FilterSearch">
+                                    <div class="form-group Allul Allul2">
+                                        <label>Duration</label>
+                                        <ul style="margin-top: 10px;">
+                                            <li><a (click)="changeDuration('monthly')"
+                                                    [className]="duration=='monthly' ? 'active' : 'inactive'"
+                                                    href="javascript:void(0)">Monthly</a></li>
+                                            <li><a (click)="changeDuration('quarterly')" href="javascript:void(0)"
+                                                    [className]="duration=='quarterly' ? 'active' : 'inactive'">Quarterly</a>
+                                            </li>
+                                            <li><a (click)="changeDuration('annualy')"
+                                                    [className]="duration=='annualy' ? 'active' : 'inactive'"
+                                                    href="javascript:void(0)">Annual</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4" style="display: flex;align-items: flex-end; padding-bottom: 15px;">
+                                <div class="Filter ">
+                                    <button type="button" (click)="saveFees()" [disabled]="form.invalid"
+                                        class="save">Save</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

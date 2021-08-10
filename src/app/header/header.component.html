@@ -1,0 +1,71 @@
+<div class="Header">
+    <div class="Logo">
+        <a [routerLink]="['/summary']" class="mudaniLogo"><img src="assets/images/logo.png"></a>
+        <div class="logoMid">
+            <ul class="nav ">
+                <li class="nav-item " [routerLinkActive]="['active']">
+                    <a class="nav-link" [routerLink]="['/summary']">Summary | Overview</a>
+                </li>
+                <li class="nav-item" [routerLinkActive]="['active']">
+                    <a class="nav-link " [routerLink]="['/client']">Clients</a>
+                </li>
+                <li class="nav-item" [routerLinkActive]="['active']">
+                    <a class="nav-link " [routerLink]="['/investing']">Investing</a>
+                </li>
+                <li class="nav-item" [routerLinkActive]="['active']">
+                    <a class="nav-link" [routerLink]="['/transactions']">Transactions</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="Navigation">
+        <div class="header-notifications">
+            <a [routerLink]="['/notification']">
+                <i class="fa fa-bell fa-2x" aria-hidden="true"></i>
+                <span class="badge">5</span>
+            </a>
+
+        </div>
+
+        <div class="Avater">
+            <a href="javascript:void(0);">
+                <figure><img src="assets/images/profile.jpg"></figure> Vishu
+            </a>
+            <ul>
+                <li>
+                    <figure><img src="assets/images/profile.jpg"></figure>
+                    <h4> Bob Hyden <span>Administrator</span></h4>
+                </li>
+                <li><a [routerLink]="['/report-management']"><span><i class="fa fa-flag-o"
+                                aria-hidden="true"></i></span> Compliance</a></li>
+                <li><a [routerLink]="['/questionnaire']"><span><i class="fa fa-question-circle-o"
+                                aria-hidden="true"></i></span> Questionnaire</a></li>
+
+                <!-- <li><a [routerLink]="['/popularetfs']"><span><i class="fa fa-question-circle-o"
+                                aria-hidden="true"></i></span> Add Popular Stocks</a></li> -->
+                <li><a [routerLink]="['/add-ticker']"><span><i class="fa fa-question-circle-o"
+                                aria-hidden="true"></i></span> Add Popular Stocks</a></li>
+
+                <li><a [routerLink]="['/compliance']"><span><i class="fa fa-list-alt" aria-hidden="true"></i></span>
+                        Fee Schedule
+                    </a></li>
+                <li><a [routerLink]="['/wait-list']"><span><i class="fa fa-clock-o" aria-hidden="true"></i></span> Wait
+                        List</a></li>
+                <!-- <li><a [routerLink]="['/popularetfs']"><span><i class="fa fa-line-chart" aria-hidden="true"></i></span>
+                            Stocks/Etfs</a></li> -->
+                <li><a [routerLink]="['/free-stock-distribution']"><span><i class="fa fa-line-chart"
+                                aria-hidden="true"></i></span> Free Stock Referral
+                    </a></li>
+                <li><a [routerLink]="['/support']"><span><i class="fa fa-life-ring" aria-hidden="true"></i></span>
+                        Support</a></li>
+                <li><a [routerLink]="['/settings']"><span><i class="fa fa-cog"></i></span> Setting</a></li>
+                <!-- <li><a [routerLink]="['/static-content-managment']"><span><i class="fa fa-font"></i></span> Content
+                        Management</a></li> -->
+                <li><a [routerLink]="['/notification']"><span><i class="fa fa-bell-o" aria-hidden="true"></i></span>
+                        Send Notifications</a></li>
+                <li><a [routerLink]="['/']"><span><i class="fa fa-sign-out"></i></span> Logout</a></li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>

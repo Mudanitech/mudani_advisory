@@ -1,0 +1,335 @@
+.site-root .site-main {
+    min-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+.b-questionnaire .questionnaire-content .tool-choice {
+    position: fixed;
+    width: 280px;
+}
+.ant-card {
+    font-size: 14px;
+    font-feature-settings: "tnum";
+    font-variant: tabular-nums;
+    line-height: 1.5;
+    color: rgba(0,0,0,.65);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: #fff;
+    border-radius: 2px;
+    position: relative;
+    transition: all .3s;
+}
+.b-questionnaire .questionnaire-content .tool-choice .tool-title {
+    padding: 8px 24px;
+    font-weight: 700;
+    font-size: 16px;
+}
+.b-questionnaire .questionnaire-content .tool-choice .choices {
+    display: block;
+    padding: 14px 24px;
+    border-top: 1px solid #f0f2f5;
+    cursor: pointer;
+    color: #2196f3;
+}
+.b-questionnaire .questionnaire-content .tool-choice .anticon {
+    margin-right: 12px;
+}
+.anticon {
+    display: inline-block;
+    font-style: normal;
+    vertical-align: baseline;
+    text-align: center;
+    text-transform: none;
+    line-height: 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.anticon:before {
+    display: block;
+}
+.b-questionnaire .questionnaire-content .edit-questions-content {
+    padding-left: 294px;
+    width: 100%;
+}
+.goal-question-section {
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 16px 24px;
+    margin-bottom: 16px;
+}
+.ant-row {
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+    height: auto;
+    zoom: 1;
+    display: block;
+    box-sizing: border-box;
+}
+.ant-form-item {
+    font-size: 14px;
+    font-feature-settings: "tnum";
+    font-variant: tabular-nums;
+    line-height: 1.5;
+    color: rgba(0,0,0,.65);
+    box-sizing: border-box;
+    padding: 0;
+    list-style: none;
+    margin: 0 0 24px;
+    vertical-align: top;
+}
+.ant-form-item-label {
+    white-space: normal;
+    line-height: 29px;
+}
+.ant-form-item-label {
+    text-align: right;
+    vertical-align: middle;
+    line-height: 39.9999px;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.ant-form-item-label label {
+    color: rgba(0,0,0,.85);
+}
+.ant-form-item label {
+    position: relative;
+}
+.goal-questionnaire-root .itemProps-label {
+    color: #1e1e1e;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+.ant-form-item-label label:after {
+    content: ":";
+    margin: 0 8px 0 2px;
+    position: relative;
+    top: -.5px;
+}
+.ant-form-item-required:before {
+    display: inline-block;
+    margin-right: 4px;
+    content: "*";
+    font-family: SimSun;
+    line-height: 1;
+    font-size: 14px;
+    color: #f5222d;
+}
+.goal-questionnaire-root .ant-form-item-control {
+    line-height: 34px;
+}
+.ant-form-item-control {
+    line-height: 39.9999px;
+    position: relative;
+    zoom: 1;
+}
+.ant-input {
+    font-family: "Monospaced Number","Chinese Quote",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-feature-settings: "tnum";
+    font-variant: tabular-nums;
+    box-sizing: border-box;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    display: inline-block;
+    padding: 4px 11px;
+    width: 100%;
+    height: 32px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(0,0,0,.65);
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #d8dce6;
+    border-radius: 4px;
+    transition: all .3s;
+}
+.goal-question-section .ant-form-item {
+    padding-bottom: 18px;
+}
+.goal-questionnaire-root .ant-row {
+    width: 80%;
+}
+textarea.ant-input {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+    transition: all .3s,height 0s;
+    min-height: 32px;
+}
+.goal-question-item .goal-question-title {
+    padding: 10px 0 12px;
+    border-bottom: 1px solid #f0f2f5;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.goal-question-item .ant-row {
+    display: flex;
+}
+.goal-question-item .goal-question-title .ant-form-item-label {
+    font-size: 16px;
+    color: #1e1e1e;
+    font-weight: 700;
+}
+.goal-question-item .ant-form-item-label {
+    min-width: 40px;
+}
+.goal-question-item .ant-row .ant-form-item-control-wrapper {
+    flex: 1 1;
+}
+.goal-question-item .goal-question-content .question-option-wrap {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+}
+.goal-question-item .remove-icon {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 5px;
+    color: #888e98;
+}
+.anticon-close:before, .anticon-cross:before {
+    content: "\e633";
+}
+.b-questionnaire .ant-form-inline .ant-form-item-with-help, .b-questionnaire .ant-form-item {
+    margin-bottom: 0;
+}
+.goal-question-item .goal-question-content .add-option {
+    padding: 10px 20px;
+}
+.goal-question-footer {
+    overflow: hidden;
+    border-top: 1px solid #f0f2f5;
+}
+.goal-question-footer .ant-row-flex {
+    margin: 16px 0;
+}
+.ant-row-flex {
+    display: flex;
+    flex-flow: row wrap;
+}
+.ant-row-flex-space-between {
+    justify-content: space-between;
+}
+.goal-question-footer .choice-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 12px;
+    height: 12px;
+    background: #999;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 1px #999;
+    margin-left: 1px;
+}
+.goal-question-footer .footer-btn {
+    color: #888e98;
+    margin-left: 30px;
+}
+.ant-col-6.flex-colume.record{
+    margin-left: 20px;
+}
+.b-questionnaire .choice-record {
+    text-align: right;
+}
+
+.choice-record span {
+    font-family: "Monospaced Number","Chinese Quote",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+.site-root .site-main {
+    min-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+.ant-breadcrumb {
+    font-family: "Monospaced Number","Chinese Quote",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-feature-settings: "tnum";
+    font-variant: tabular-nums;
+    line-height: 1.5;
+    color: rgba(0,0,0,.65);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: rgba(0,0,0,.45);
+    font-size: 14px;
+}
+.breadNav_nav__3bu0T .ant-breadcrumb-link {
+    color: rgba(30,30,30,.7);
+}
+.ant-breadcrumb-separator {
+    margin: 0 8px;
+    color: rgba(0,0,0,.45);
+}
+.ant-breadcrumb>span:last-child .ant-breadcrumb-separator {
+    display: none;
+}
+.ant-btn {
+    line-height: 1.5;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    white-space: nowrap;
+    padding: 0 15px;
+    font-size: 14px;
+    border-radius: 4px;
+    height: 32px;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: all .3s cubic-bezier(.645,.045,.355,1);
+    position: relative;
+    color: rgba(0,0,0,.65);
+    background-color: #fff;
+    border: 1px solid #d8dce6;
+    margin-left: 20px;
+}
+.ant-btn-primary {
+    color: #fff;
+    background-color: #2196f3;
+    border-color: #2196f3;
+}
+.breadNav_nav__3bu0T {
+    border-bottom: 1px solid #f0f2f5;
+    line-height: 54px;
+    height: 54px;
+    padding: 0 27px;
+}
+.fixed {
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+}
+
+
+.ant-form-item-children .ng-invalid.ng-touched{
+    // border-left: 5px solid red;
+ }
+ 
+ input.ng-invalid.ng-touched{
+     border-left: 5px solid red;
+ }
+ 
+ textarea.ng-invalid.ng-touched{
+     border-left: 5px solid red;
+ }
+ button[type="button"]:disabled {
+     background: #9c9c9c;
+     border-color: #9c9c9c;
+     cursor: not-allowed;
+   }

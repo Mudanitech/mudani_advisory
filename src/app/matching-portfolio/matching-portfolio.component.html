@@ -1,0 +1,198 @@
+<app-header></app-header>
+<ngx-spinner></ngx-spinner>
+<div class="WrapperArea">
+    <div class="WrapperBox">
+        <div class="fixed left-0 right-0 z-100" style="top: 64px;">
+            <div class="breadNav_nav__3bu0T site-main DisFlex bg-white">
+                <div class="ant-breadcrumb"><span><span class="ant-breadcrumb-link">Questionnaire</span><span
+                            class="ant-breadcrumb-separator">&gt;</span></span><span><span
+                            class="ant-breadcrumb-link">Edit</span><span
+                            class="ant-breadcrumb-separator">&gt;</span></span><span><span
+                            class="ant-breadcrumb-link">Matching Portfolio</span><span
+                            class="ant-breadcrumb-separator">&gt;</span></span></div>
+                <div><button type="button" class="ant-btn"
+                        [routerLink]="['/add-questionnaire']"><span>Back</span></button>
+                    <button type="button" [routerLink]="['/questionnaire']"
+                        class="ant-btn ml-8 ant-btn-primary"><span>Finish</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="Small-Wrapper" style="    background-color: #F6F8FC;">
+            <div class="HelpArea b-questionnaire">
+                <div class="questionnaire-content mt-16" style="padding-top: 40px;">
+                    <div class="site-main">
+                        <div class="ant-card ant-card-wider-padding">
+                            <div class="ant-card-body">
+                                <h4 class="title">
+                                    <div>Matching portfolio&nbsp;<span class="strategy-tip">(You must click the "Finish"
+                                            button to pass
+                                            the completeness judgment before the revision will be saved)</span></div>
+                                    <span>Expected
+                                        total score: 1～26</span>
+                                </h4>
+                                <div class="ant-table-wrapper my-20">
+                                    <div class="ant-spin-nested-loading">
+                                        <div class="ant-spin-container">
+                                            <div class="ant-table ant-table-default ant-table-scroll-position-left">
+                                                <div class="ant-table-content">
+                                                    <div class="ant-table-body">
+                                                        <table class="">
+                                                            <colgroup>
+                                                                <col>
+                                                                <col>
+                                                                <col>
+                                                                <col>
+                                                            </colgroup>
+                                                            <thead class="ant-table-thead">
+                                                                <tr>
+                                                                    <th class=""><span>Score Range</span></th>
+                                                                    <th class=""><span>Portfolio</span></th>
+                                                                    <th class=""><span>Risk Level</span></th>
+                                                                    <th class="td-button"><span>Action</span></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="ant-table-tbody">
+                                                                <tr *ngFor="let item of modelDetail"
+                                                                    class="ant-table-row  ant-table-row-level-0"
+                                                                    data-row-key="586">
+                                                                    <td class=""><span
+                                                                            class="ant-table-row-indent indent-level-0"
+                                                                            style="padding-left: 0px;"></span>{{item.minScore}}
+                                                                        ~ {{item.maxScore}}
+                                                                    </td>
+                                                                    <td class="">{{item.portfolioDetail[0].name }}</td>
+                                                                    <td class="">{{item.portfolioDetail[0].riskLevel }}
+                                                                    </td>
+                                                                    <td class="td-button">
+                                                                        <!-- <a
+                                                                            class="link-button-root link-button-default link-button-divider"
+                                                                            href="#1">Edit</a> -->
+                                                                        <a style="cursor:pointer;"
+                                                                            class="link-button-root link-button-danger"
+                                                                            (click)="deletePortfolio(item)">Delete</a>
+                                                                    </td>
+                                                                </tr>
+                                                                <!-- <tr class="ant-table-row  ant-table-row-level-0"
+                                                                    data-row-key="587">
+                                                                    <td class=""><span
+                                                                            class="ant-table-row-indent indent-level-0"
+                                                                            style="padding-left: 0px;"></span>8～17</td>
+                                                                    <td class="">60/40 Domestic with Tech Tilt</td>
+                                                                    <td class="">Moderately Aggressive</td>
+                                                                    <td class="td-button"><a
+                                                                            class="link-button-root link-button-default link-button-divider"
+                                                                            href="#1">Edit</a><a
+                                                                            class="link-button-root link-button-danger"
+                                                                            href="#1">Delete</a></td>
+                                                                </tr>
+                                                                <tr class="ant-table-row  ant-table-row-level-0"
+                                                                    data-row-key="588">
+                                                                    <td class=""><span
+                                                                            class="ant-table-row-indent indent-level-0"
+                                                                            style="padding-left: 0px;"></span>18～26</td>
+                                                                    <td class="">80/20 Domestic</td>
+                                                                    <td class="">Aggressive</td>
+                                                                    <td class="td-button"><a
+                                                                            class="link-button-root link-button-default link-button-divider"
+                                                                            href="#1">Edit</a><a
+                                                                            class="link-button-root link-button-danger"
+                                                                            href="#1">Delete</a></td>
+                                                                </tr> -->
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><a class="link-button-root link-button-default" data-toggle="modal"
+                                    data-target="#refer" style="text-transform: inherit;"><i
+                                        class="anticon fa fa-plus-circle"></i> Add New</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="ModalBox">
+    <div id="refer" class="modal " role="dialog">
+        <div tabindex="-1" class="ant-modal-wrap " role="dialog">
+            <form [formGroup]="form">
+                <div role="document" class="ant-modal matching-modal">
+                    <div tabindex="0" style="width: 0px; height: 0px; overflow: hidden;">sentinelStart</div>
+                    <div class="ant-modal-content">
+                        <div class="ant-modal-body">
+                            <div class="text-center font-16 font-bold mb-16" style="margin-bottom: 30px;">New Portfolio
+                            </div>
+                            <label>Score Range <span class="text-gray font-12">(Full Score Range: 5~62)</span></label>
+                            <div class="input-box-wrap flex">
+                                <div class="ant-row ant-form-item is-invalid is-pristine is-untouched is-unfocused">
+                                    <div class="ant-form-item-control-wrapper">
+                                        <div class="ant-form-item-control"><span class="ant-form-item-children"><input
+                                                    type="text" formControlName="startrange"
+                                                    class="ant-input text-width" (keypress)="numberOnly($event)"
+                                                    value=""> <span class="m-10">～</span>
+                                                <input type="text" formControlName="endrange"
+                                                    class="ant-input text-width" (keypress)="numberOnly($event)"
+                                                    value=""></span></div>
+                                    </div>
+                                </div>
+
+                            </div><label>Portfolio</label>
+                            <div class="ant-row ant-form-item is-invalid is-pristine is-untouched is-unfocused">
+                                <div class="ant-form-item-control-wrapper">
+                                    <div class="ant-form-item-control"><span class="ant-form-item-children"><span
+                                                class="w-full ant-cascader-picker w-full" tabindex="0"><span
+                                                    class="ant-cascader-picker-label"></span>
+                                                <select name="" formControlName="models" id="" class="ant-input">
+                                                    <option *ngFor="let item of portfolioList" [ngValue]="item._id">
+                                                        {{item.name}}
+                                                    </option>
+                                                </select>
+                                            </span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-24"><button (click)="closePops()" type="button"
+                                    class="ant-btn my-0 mx-4"><span>Cancel</span></button>
+                                <button type="button" [disabled]="form.invalid" (click)="saveData()"
+                                    class="ant-btn my-0 mx-4 ant-btn-primary"><span>Confirm</span></button></div>
+                        </div>
+                    </div>
+                    <div tabindex="0" style="width: 0px; height: 0px; overflow: hidden;">sentinelEnd</div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="ModalBox">
+    <div id="confirmDylog" class="modal " role="dialog">
+        <div tabindex="-1" class="ant-modal-wrap " role="dialog">
+            <form [formGroup]="form">
+                <div role="document" class="ant-modal matching-modal">
+                    <div tabindex="0" style="width: 0px; height: 0px; overflow: hidden;">sentinelStart</div>
+                    <div class="ant-modal-content">
+                        <div class="ant-modal-body">
+                            <div class="text-center font-16 font-bold mb-16" style="margin-bottom: 30px;">Are you sure
+                                to delete ?
+                            </div>
+
+
+                            <div class="text-center mt-24"><button (click)="closePops()" type="button"
+                                    class="ant-btn my-0 mx-4"><span>Cancel</span></button>
+                                <button type="button" [disabled]="form.invalid" (click)="saveData()"
+                                    class="ant-btn my-0 mx-4 ant-btn-primary"><span>Confirm</span></button></div>
+                        </div>
+                    </div>
+                    <div tabindex="0" style="width: 0px; height: 0px; overflow: hidden;">sentinelEnd</div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

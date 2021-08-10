@@ -1,0 +1,179 @@
+<app-header></app-header>
+
+<div class="WrapperArea">
+    <div class="WrapperBox">
+        <div class="Small-Wrapper">
+            <div class="HelpArea">
+                <div class="enterKey">
+                    <div class="SearchBox">
+                        <a [routerLink]="['/compliance']">
+                            << Back</a>
+                    </div>
+                </div>
+                <div class="bread mt-3">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">Compliance</li>
+                            <li class="breadcrumb-item active" aria-current="page">Detail</li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <div class="row compliance">
+                    <!-- <div class="col-md-4">
+                        <div class="ComplianceDetail">
+                            
+                        </div>
+                    </div> -->
+                    <!-- <div class="ant-row-flex mt-16" style="margin-left: -8px; margin-right: -8px;"> -->
+                        <div class="col-md-4" style="padding-left: 8px; padding-right: 8px;">
+                            <div class="complianceDetail_brief-info__1274b">
+                                <h2 class="complianceDetail_brief-title__2Abvd">Vishu Compliance</h2>
+                                <div class="complianceDetail_brief-item__1CpUt"><span
+                                        class="complianceDetail_brief-item-label__2ihM0">Email:</span><span
+                                        class="complianceDetail_brief-item-value__7K7t9">email@demo.com</span>
+                                </div>
+                                <div class="complianceDetail_brief-item__1CpUt"><span
+                                        class="complianceDetail_brief-item-label__2ihM0">Registered Date:</span><span
+                                        class="complianceDetail_brief-item-value__7K7t9">03/25/2020</span></div>
+                                <div class="complianceDetail_brief-item__1CpUt"><span
+                                        class="complianceDetail_brief-item-label__2ihM0">Client Type:</span><span
+                                        class="complianceDetail_brief-item-value__7K7t9">Mudani</span></div>
+                            </div>
+                        </div>
+                        <div class="col-md-8" style="padding-left: 8px; padding-right: 8px;">
+                            <div class="planInfo_plan-info__2MTKx">
+                                <header class="planInfo_header__1c_V_">
+                                    <h3 class="planInfo_title__2jmjD">Client's Investment Plan</h3><span
+                                        class="planInfo_header-time__19RME">Date: --</span>
+                                </header>
+                                <div class="ant-spin-nested-loading with-blank-chart ">
+                                    <!-- <div class="ant-spin-container"><img class="img"
+                                            src="https://static.tradingfront.com/ria-portal/static/images/data.53e61a49.png"
+                                            alt="blank-skeleton">
+                                        <p class="desc">Your client does not have any recommended investment plan</p>
+                                    </div> -->
+                                    <h5 class="sky Blue viewArea pb-2">AMZN</h5>
+                                <div class="amznMainInner categoryAmznMainInner">
+                                    <div class="amznLeft">
+                                        <div class="amznLeftInner">
+                                            <img src="assets/images/logo.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="amznMid">
+                                        <div class="amznMidInner">
+                                            <div id="chart-10">
+                                                <apx-chart
+                                                  [series]="chartLineSparkline10Options.series"
+                                                  [chart]="commonLineSparklineOptions.chart"
+                                                  [tooltip]="commonLineSparklineOptions.tooltip"
+                                                ></apx-chart>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="amznRight">
+                                        <h4>$234</h4>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- </div> -->
+                </div>
+                <div class="adjust mt-5">
+                    <div class="colAdjust">
+                        <h3 style="text-align: left;">Account List <i class="fa fa-question-circle-o" aria-hidden="true"></i> </h3>
+                    </div>
+                </div>
+                <div class="TableList">
+                    <div class="mainTable ">
+                        <table class="table table-bordered ">
+                            <thead>
+                                <tr>
+                                    <th>Account name</th>
+                                    <th> Account No.</th> 
+                                    <th>Account Type</th>  
+                                    <th>Account Capability</th>  
+                                    <th>Fee</th>
+                                    <th>Submit Time</th> 
+                                    <th>Action</th> 
+                                </tr>
+                            </thead>
+            
+                            <tbody>
+                                <tr>
+                                    <td>USD Cash</td>
+                                    <td>USD Cash</td> 
+                                    <td> Cash</td>  
+                                    <td>28.00%</td>  
+                                    <td>17.00%</td>  
+                                    <td>25.00%</td>
+                                    <td> 
+                                        <a class="Blue  " href="javaScript:void(0)">View</a>
+                                    </td>  
+                                </tr>    
+                                <tr>
+                                    <td class="sky">AMZN</td>
+                                    <td>USD Cash</td> 
+                                    <td>3,311.00</td>
+                                    <td>28.00%</td>  
+                                    <td>17.00%</td>  
+                                    <td>25.00%</td> 
+                                    <td> 
+                                        <a class="Blue  "  href="javaScript:void(0)">View</a>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td class="sky">MSFT</td>
+                                    <td>USD Cash</td> 
+                                    <td>223.31</td>
+                                    <td>28.00%</td>  
+                                    <td>17.00%</td>  
+                                    <td>25.00%</td>
+                                    <td> 
+                                        <a class="Blue  "  href="javaScript:void(0)">View</a>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td class="sky">AAPL</td>
+                                    <td>USD Cash</td> 
+                                    <td>121.42</td>
+                                    <td>28.00%</td>  
+                                    <td>17.00%</td>  
+                                    <td>25.00%</td>
+                                    <td> 
+                                        <a class="Blue  "  href="javaScript:void(0)">View</a>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td class="sky">AAPL</td>
+                                    <td>USD Cash</td> 
+                                    <td>983.00</td>
+                                    <td>28.00%</td>  
+                                    <td>17.00%</td>  
+                                    <td>25.00%</td>
+                                    <td> 
+                                        <a class="Blue  "  href="javaScript:void(0)">View</a>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td>USD Cash</td>
+                                    <td>USD Cash</td> 
+                                    <td> Cash</td>  
+                                    <td>28.00%</td>  
+                                    <td>17.00%</td>  
+                                    <td>25.00%</td>
+                                    <td> 
+                                        <a class="Blue  "  href="javaScript:void(0)">View</a>
+                                    </td>
+                                </tr>   
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

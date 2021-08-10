@@ -1,0 +1,160 @@
+<app-header></app-header>
+<div class="WrapperArea">
+    <div class="WrapperBox">
+        <div class="Small-Wrapper">
+            <div class="HelpArea">
+                <h2 class="sky">Retail Clients</h2>
+                <!-- <ul class="nav nav-tabs MainTabAll">
+                    <li class="nav-item ">
+                        <a class="nav-link " [routerLink]="['/summary']">Summary | Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" [routerLink]="['/client']">Clients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " [routerLink]="['/investing']">Investing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/transactions']">Transactions</a>
+                    </li>
+                </ul> -->
+            
+
+<div class="HelpContent">
+    <div class="totalClient rightSide">
+        <div class="retailClient">
+            <h5><span class="sky d-block">309</span>Total Clients</h5>
+        </div>
+        <div class="retailClient">
+            <h5><span class="sky d-block">$23456769</span>Total AUM </h5>
+        </div>
+    </div>
+
+    <div class="HelpArea">
+        <!-- <ul class="nav nav-tabs boxs justify-content-around pt-4" id="myTab" role="tablist">
+            <li class="nav-item ">
+                <a class="nav-link active" id="Retail-tab" data-toggle="tab" href="#Retail" role="tab" aria-controls="Retail" aria-selected="true">Retail Clients</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " id="Institutional-tab" data-toggle="tab" href="#Institutional" role="tab" aria-controls="Institutional" aria-selected="false">Institutional Clients</a>
+            </li>
+        </ul> -->
+        <div class="TableList">
+            <div class="filterFlex">
+                <div class="SearchBox searchIcon">
+                    <form action="">
+                        <input type="text" style="width: 250px;" placeholder="Search">
+                        <a class="searchIconBtn" href="javaScipt:void(0)"><img src="assets/images/search.svg" alt=""></a>
+                    </form>
+                    <a href="javaScript:void(0)"><img class="csv img-fluid" src="assets/images/csv.svg" alt="">Download</a>
+                </div>  
+            </div>
+            
+            <div class="mainTable ">
+                <table class="table table-bordered ">
+                    <thead>
+                        <tr>
+                            
+                            <th>Client Name</th> 
+                            <th>Account Number</th>  
+                            <th>Account Type</th>
+                            <th class="managedDropdown">Account <i aria-hidden="true" class="fa fa-filter"></i>
+                                <ul class="managedDropdownShow summaryDropdownShow summaryDropdownShow4">
+                                    <li><a href="javaScript:void(0)">Managed Account</a> </li>
+                                    <li><a href="javaScript:void(0)"> Self-Directed Account</a></li>
+                                </ul>
+                            </th>  
+                            <th>Portfolio</th>  
+                            <th>Balance </th>  
+                            <th>YTD Change</th>  
+                            <th>Action </th>  
+                            
+                        </tr>
+                    </thead>
+    
+                    <tbody>
+                        <tr>
+                            
+                            <td>Simmi Sharma</td> 
+                            <td>2323232</td>  
+                            <td>Joint Account</td>  
+                            <td>Managed</td>  
+                            <td>Conservative</td>  
+                            <td>$5,676,545,672	</td>  
+                            <td>$5672</td> 
+                            <td> 
+                                <a class="Blue viewArea " [routerLink]="['/client-detail-1']">View</a>
+                            </td> 
+                        </tr>    
+                        <tr>
+                            <td>Vishal Yadav</td> 
+                            <td>2323232</td>  
+                            <td>Joint Account</td>  
+                            <td>Managed</td>  
+                            <td>Conservative</td>  
+                            <td>$5,676,545,672	</td>  
+                            <td>$23453</td> 
+                            <td> 
+                                <a class="Blue viewArea" [routerLink]="['/client-detail-1']">View</a>
+                            </td> 
+                        </tr>  
+                        <tr>
+                            <td>Simmi Sharma</td> 
+                            <td>2323232</td>  
+                            <td>Joint Account</td>  
+                            <td>Managed</td>  
+                            <td>Conservative</td>  
+                            <td>$5,676,545,672	</td>  
+                            <td>$5672</td> 
+                            <td> 
+                                <a class="Blue viewArea" [routerLink]="['/client-detail-1']">View</a>
+                            </td> 
+                        </tr>  
+                        <tr>
+                            <td>Simmi Sharma</td> 
+                            <td>2323232</td>  
+                            <td>Joint Account</td>  
+                            <td>Managed</td>  
+                            <td>Conservative</td>  
+                            <td>$5,676,545,672	</td>  
+                            <td>$5672</td> 
+                            <td> 
+                                <a class="Blue viewArea" [routerLink]="['/client-detail-1']">View</a>
+                            </td> 
+                        </tr>  
+                        <tr>
+                            <td>Simmi Sharma</td> 
+                            <td>2323232</td>  
+                            <td>Joint Account</td>  
+                            <td>Managed</td>  
+                            <td>Conservative</td>  
+                            <td>$5,676,545,672	</td>  
+                            <td>$5672</td> 
+                            <td> 
+                                <a class="Blue viewArea" [routerLink]="['/client-detail-1']">View</a>
+                            </td> 
+                        </tr>  
+                    </tbody>
+                </table>
+            </div>
+            <div class="Pagination">
+                <ul>
+                    <li><a href="javaScript:void(0)"><img src="assets/images/left-arrow.svg" alt=""></a></li>
+                    <li class="active"><a href="javaScript:void(0)">1</a></li>
+                    <li><a href="javaScript:void(0)">2</a></li>
+                    <li><a href="javaScript:void(0)">3</a></li>
+                    <li><a href="javaScript:void(0)"><img src="assets/images/right-arrow.svg" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+
+        
+    </div>
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>

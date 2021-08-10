@@ -1,0 +1,87 @@
+<app-header></app-header>
+
+<div class="WrapperArea">
+    <div class="WrapperBox">
+        <div class="Small-Wrapper">
+            <div class="HelpArea">
+                <div class="editProfileMain boxs">
+                    <div class="loginMain boxs">
+                        <form action="">
+                            <div class="loginForm loginForm2 editLogin boxs">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="contentToggle">
+                                            <span class="Icon"><i class="fa fa-bell mr-2" aria-hidden="true"></i>Notification</span>
+                                            <label class="switch">
+                                                <input type="checkbox">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <a href="javaScript:void(0)"  data-toggle="modal" data-target="#resetPasswordModal" class="d-block" ><span class="IconsM">Change Password <i class="fa fa-unlock-alt float-right" aria-hidden="true"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="loginMODAL otpMODAL modal" id="resetPasswordModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-body">
+            <div class="loginMain boxs">
+                <div class="modalLogo">
+                    <img src="assets/images/logo.png" alt="logo" class="img-fluid">
+                </div>
+                <form action="/action_page.php" method="get">
+                    <div class="loginForm loginForm3 boxs">
+                        <h2>Create New
+                            Password</h2>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <i class="fa fa-times" aria-hidden="true"></i>                            
+                        </button>
+                        <div class="row otpRow">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="password" class="form-control form_pass" placeholder="Enter old password">
+                                    <span class="Icon"><img src="assets/images/key1.png" alt="key1" class="img-fluids"></span>
+                                    <span class="eye"><a href="javaScript:void(0)"><img src="assets/images/eye.png" alt="eye" class="img-fluid"></a></span>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="password" class="form-control form_pass" placeholder="Create new password">
+                                    <span class="Icon"><img src="assets/images/key1.png" alt="key1" class="img-fluids"></span>
+                                    <span class="eye"><a href="javaScript:void(0)"><img src="assets/images/eye.png" alt="eye" class="img-fluid"></a></span>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="password" class="form-control form_pass" placeholder="Create new password">
+                                    <span class="Icon"><img src="assets/images/key1.png" alt="key1" class="img-fluids"></span>
+                                    <span class="eye"><a href="javaScript:void(0)"><img src="assets/images/eye.png" alt="eye" class="img-fluid"></a></span>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="loginBtn form_log addhover boxs">
+                                    <button type="submit"  data-dismiss="modal" data-toggle="modal" data-target="#updatePasswordModal" >Update Password</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        </div>
+    </div>
+</div>

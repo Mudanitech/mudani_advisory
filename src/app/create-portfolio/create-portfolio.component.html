@@ -1,0 +1,221 @@
+<app-header></app-header>
+
+<div class="WrapperArea">
+    <div class="WrapperBox">
+        <div class="Small-Wrapper">
+            <div class="HelpArea">
+                <div class="enterKey">
+                    <div class="SearchBox">
+                        <a [routerLink]="['/investing']">
+                            << Back</a>
+                    </div>
+                    <div class="SearchBox SearchBoxModel">
+                        <button class="thematic-buttons" [disabled]="portfolioFrom.invalid" (click)="addPortfolio()"
+                            type="button"><i class="fa fa-file-text" aria-hidden="true"></i>Create</button>
+                    </div>
+                </div>
+                <div class="bread mt-3">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">Portfolio</li>
+                            <li class="breadcrumb-item active" aria-current="page">Create Portfolio</li>
+
+                        </ol>
+                    </nav>
+                </div>
+                <form [formGroup]="portfolioFrom">
+                    <div class="adjust">
+                        <div class="row">
+                            <div class="col-md-3 colAdjust">
+
+                                <div class="Filter FilterSearch">
+                                    <div class="form-group">
+                                        <label>Select Model</label>
+                                        <select id="" formControlName="modelId" class="ant-input">
+                                            <option *ngFor="let item of modelList" [ngValue]="item._id">
+                                                {{item.modelName}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="Filter FilterSearch">
+                                    <div class="form-group">
+                                        <label>Risk Level</label>
+                                        <input type="text" formControlName="riskLevel" class="form-control"
+                                            placeholder="Risk Level">
+                                    </div>
+                                </div>
+                                <div class="Filter FilterSearch">
+                                    <div class="form-group">
+                                        <label>Holdings Type</label>
+                                        <div class="newHold">
+                                            <a href="javascript:void(0)" class="active">ETF/Equity</a>
+                                            <a href="javascript:void(0)">Mutual Funds</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                             
+                            </div>
+                            <div class="col-md-3 colAdjust">
+                                <div class="Filter FilterSearch">
+                                    <div class="form-group">
+                                        <label>Portfolio Name</label>
+                                        <input type="text" formControlName="name" class="form-control"
+                                            placeholder="Name">
+                                    </div>
+                                </div>
+                        
+                           
+                                <div class="Filter FilterSearch">
+                                    <div class="form-group">
+                                        <label>Drift</label>
+                                        <select id="" formControlName="drift" class="ant-input">
+                                            <option value="Active"> Active </option>
+                                            <option value="Passive"> Passive </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="Filter FilterSearch">
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <textarea formControlName="description" cols="80" rows="6"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5 chartMain colAdjust">
+                                <h3>Target Allocation</h3>
+                                <div class="ClientAccount pb-3">
+                                    <h4 style="text-transform: uppercase; text-align: center;"><strong>Balance Sheets
+                                            Components</strong></h4>
+                                </div>
+                                <div class="chart" style="    margin: 0 auto;" id="chart">
+
+                                    <div class="newCharts">
+                                        <div id="chart" style="padding-left: 85px;">
+                                            <apx-chart
+                                              [series]="chartOptions.series"
+                                              [chart]="chartOptions.chart"
+                                              [labels]="chartOptions.labels"
+                                              [title]="chartOptions.title"
+                                              [theme]="chartOptions.theme"
+                                              [responsive]="chartOptions.responsive"
+                                            ></apx-chart>
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div style="display: flex;justify-content: space-between;padding: 35px 0px;">
+                    <div class="totalCount totalCountModel">
+                        <div class="SearchBox SearchBoxModel">
+                            <a href="javaScript:void(0)" class="ml-0"><i class="fa fa-plus-circle"
+                                    aria-hidden="true"></i>Add New</a>
+                        </div>
+                        <div class="SearchBox">
+                            <div class="SearchBox searchIcon">
+                                <form action="">
+                                    <input type="text" style="width: 250px;" placeholder="Search">
+                                    <a class="searchIconBtn" href="javaScipt:void(0)"><img
+                                            src="assets/images/search.svg" alt=""></a>
+                                </form>
+                         
+                            </div>
+                        </div>
+               
+                
+                    </div>
+                    <div class="SearchBox SearchBoxModel">
+                        <a href="javaScript:void(0)" class="mr-4"><i class="fa fa-download"
+                                aria-hidden="true"></i>Download</a>
+                    </div>
+                </div>
+    
+                    <div class="TableList">
+                        <div class="mainTable ">
+                            <table class="table table-bordered ">
+                                <thead>
+                                    <tr>
+                                        <th>Ticker</th>
+                                        <th> Name</th>
+                                        <th>Latest Price</th>
+                                        <th>holdings type</th>
+                                        <th>allocation %</th>
+                                   
+                                    </tr>
+                                </thead>
+    
+                                <tbody>
+                                    <tr>
+                                        <td>USD Cash</td>
+                                        <td>USD Cash</td>
+                                        <td></td>
+                                        <td> Cash</td>
+                                        <td><span class="inputBox"><input type="text" class="formControl" value="26%" readonly>
+                                        <button class="minus"><i class="fa fa-minus"></i></button>
+                                        </span></td>
+                                   
+                                    </tr>
+                                    <tr>
+                                        <td class="sky">AMZN</td>
+                                        <td>USD Cash</td>
+                                        <td>3,311.00</td>
+                                        <td class="sky"> Stock</td>
+                                        <td><span class="inputBox"><input type="text" class="formControl" value="24%" readonly>
+                                            <button class="minus"><i class="fa fa-minus"></i></button>
+                                            </span></td>
+                                    
+                                    </tr>
+                                    <tr>
+                                        <td class="sky">MSFT</td>
+                                        <td>USD Cash</td>
+                                        <td>223.31</td>
+                                        <td class="sky"> Stock</td>
+                                        <td><span class="inputBox"><input type="text" class="formControl" value="40%" readonly>
+                                            <button class="minus"><i class="fa fa-minus"></i></button>
+                                            </span></td>
+                                   
+                                    </tr>
+                                    <tr>
+                                        <td class="sky">AAPL</td>
+                                        <td>USD Cash</td>
+                                        <td>121.42</td>
+                                        <td class="sky"> Stock</td>
+                                        <td><span class="inputBox"><input type="text" class="formControl" value="20.8%" readonly>
+                                            <button class="minus"><i class="fa fa-minus"></i></button>
+                                            </span></td>
+                                   
+                                    </tr>
+                                    <tr>
+                                        <td class="sky">AAPL</td>
+                                        <td>USD Cash</td>
+                                        <td>983.00</td>
+                                        <td class="sky"> Stock</td>
+                                        <td><span class="inputBox"><input type="text" class="formControl" value="20.6%" readonly>
+                                            <button class="minus"><i class="fa fa-minus"></i></button>
+                                            </span></td>
+                                    
+                                    </tr>
+                                    <tr>
+                                        <td>USD Cash</td>
+                                        <td>USD Cash</td>
+                                        <td></td>
+                                        <td> Cash</td>
+                                        <td><span class="inputBox"><input type="text" class="formControl" value="29%" readonly>
+                                            <button class="minus"><i class="fa fa-minus"></i></button>
+                                            </span></td>
+                                    
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div> 
+            </div>
+        </div>
+    </div>
+</div>

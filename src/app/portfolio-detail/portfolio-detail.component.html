@@ -1,0 +1,91 @@
+<app-header></app-header>
+
+<div class="WrapperArea">
+    <div class="WrapperBox">
+        <div class="Small-Wrapper">
+            <div class="HelpArea">
+                <div class="enterKey">
+                    <div class="SearchBox">
+                        <a href="javaScript:void(0)" (click)=backClicked()>
+                            << Back</a>
+                    </div>
+                    <div class="SearchBox SearchBoxModel">
+                        <a [routerLink]="['/portfolio-detail-edit/',portfolioDetail._id]"><i
+                                class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</a>
+                    </div>
+                </div>
+                <div class="bread mt-3">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">Portfolio</li>
+                            <li class="breadcrumb-item active" aria-current="page">Portfolio Details</li>
+                            <p>Added on: {{portfolioDetail.createdAt | date }}</p>
+                        </ol>
+                    </nav>
+                </div>
+
+                <div class="adjust">
+                    <div class="row">
+                        <div class="col-md-2 colAdjust">
+                            <h3>Portfolio Name<span>{{portfolioDetail.name}}</span></h3>
+                            <h3>Number of Model Assigned <span>{{assignedModelDetail.modelName}}</span></h3>
+                        </div>
+                        <div class="col-md-3 colAdjust">
+                            <h3>Risk Level <span>{{portfolioDetail.riskLevel}}</span></h3>
+                            <h3>Description <span>{{portfolioDetail.description}} </span></h3>
+                        </div>
+                        <div class="col-md-2 colAdjust">
+                            <h3>Drift <span>{{portfolioDetail.drift}}</span></h3>
+
+                        </div>
+                        <div class="col-md-5 chartMain colAdjust">
+                            <h3>Target Allocation</h3>
+                            <div class="ClientAccount pb-3">
+                                <h4 style="text-transform: uppercase; text-align: center;"><strong>Balance Sheets
+                                        Components</strong></h4>
+                            </div>
+                            <div class="chart" style="    margin: 0 auto;" id="chart">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="adjust">
+                    <div class="colAdjust">
+                        <h3 style="text-align: left;">Number of Model Assigned</h3>
+                    </div>
+                </div>
+                <div class="TableList">
+                    <div class="mainTable ">
+                        <table class="table table-bordered ">
+                            <thead>
+                                <tr>
+                                    <th>Ticker</th>
+                                    <th> Name</th>
+                                    <th>Latest Price</th>
+                                    <th>Asset Class</th>
+                                    <th>Target Value(%)</th>
+                                    <th>Upper(%)</th>
+                                    <th>Lower(%)</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr *ngFor="let item of assignedModelDetail.models">
+                                    <td class="sky">{{item.symbol}}</td>
+                                    <td>{{item.companyName}}</td>
+                                    <td>{{item.latestPrice}}</td>
+                                    <td class="sky"> {{item.holdingType}}</td>
+                                    <td>{{item.targetValue}}%</td>
+                                    <td>0%</td>
+                                    <td>0%</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

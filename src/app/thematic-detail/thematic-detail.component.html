@@ -1,0 +1,106 @@
+<app-header></app-header>
+<ngx-spinner *ngIf="isShowSpinner"></ngx-spinner>
+<div class="WrapperArea">
+    <div class="WrapperBox">
+        <div class="Small-Wrapper">
+            <div class="HelpArea">
+                <div class="enterKey">
+                    <div class="SearchBox">
+                        <a href="javaScript:void(0)" (click)=backClicked()>
+                            << Back</a>
+                    </div>
+                    <div class="SearchBox SearchBoxModel">
+                        <a [routerLink]="['/edit-thematic/',thematicDetail._id]"><i class="fa fa-pencil-square-o"
+                                aria-hidden="true"></i>Edit</a>
+                    </div>
+                </div>
+                <div class="bread mt-3">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">Thematic</li>
+                            <li class="breadcrumb-item active" aria-current="page">Thematic Detail</li>
+                            <p>Added on: {{thematicDetail.createdAt | date}}</p>
+                        </ol>
+                    </nav>
+                </div>
+
+                <div class="adjust">
+                    <div class="row">
+                        <div class="col-md-3 colAdjust">
+                            <h3>Name <span>{{thematicDetail.thematicName}}</span></h3>
+                            <!-- <h3>Assigned Model <span>{{thematicDetail.models.title}}</span></h3> -->
+                            <h3>Assigned Model <span>{{assignedModelDetail.modelName}}</span></h3>
+                        </div>
+                        <div class="col-md-3 colAdjust">
+                            <h3>Description <span>{{thematicDetail.thematicDescription}} </span></h3>
+                            <h3>Image <span><img [src]="thematicDetail.thematicImage">
+                                </span></h3>
+                        </div>
+                        <div class="col-md-6 chartMain colAdjust">
+                            <h3>Target Allocation</h3>
+                            <div class="ClientAccount pb-3">
+                                <h4 style="text-transform: uppercase; text-align: center;"><strong>Balance Sheets
+                                        Components</strong></h4>
+                            </div>
+                            <div class="chart" style="    margin: 0 auto;" id="chart">
+                                <div class="newCharts">
+                                    <div id="chart" style="padding-left: 85px;">
+                                        <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart"
+                                            [labels]="chartOptions.labels" [title]="chartOptions.title"
+                                            [theme]="chartOptions.theme" [responsive]="chartOptions.responsive">
+                                        </apx-chart>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="totalCount">
+                    <ul>
+                        <li>Total: <span>100.00%</span></li>
+                        <li>Total Cash: <span>20.00%</span></li>
+                        <li>Total Security: <span>90.00%</span></li>
+                        <li>No. of Holdings: <span>10</span></li>
+                    </ul>
+                </div> -->
+                <div class="adjust">
+                    <div class="colAdjust">
+                        <h3 style="text-align: left; padding-bottom: 40px;">Number of Model Assigned</h3>
+                    </div>
+                </div>
+                <div class="TableList">
+                    <div class="mainTable ">
+                        <table class="table table-bordered ">
+                            <thead>
+                                <tr>
+                                    <th>Ticker</th>
+                                    <th> Name</th>
+                                    <th>Latest Price</th>
+                                    <th>Asset Class</th>
+                                    <th>Target Value(%)</th>
+                                    <th>Upper(%)</th>
+                                    <th>Lower(%)</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr *ngFor="let item of assignedModelDetail.models">
+                                    <td class="sky">{{item.symbol}}</td>
+                                    <td>{{item.companyName}}</td>
+                                    <td>{{item.latestPrice}}</td>
+                                    <td class="sky"> {{item.holdingType}}</td>
+                                    <td>{{item.targetValue}}%</td>
+                                    <td>0%</td>
+                                    <td>0%</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

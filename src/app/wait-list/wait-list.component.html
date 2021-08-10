@@ -1,0 +1,70 @@
+<app-header></app-header>
+
+<!-- <div class="WrapperArea">
+    <div class="WrapperBox">
+        <div class="Small-Wrapper">
+            <div class="HelpArea">
+                <div class="wait-list">
+                    <h2 class="sky text-center">Wait List</h2>
+                    <div class="wait-list-area">
+                        <h4><span class="sky">Serial No. </span> 1</h4>
+                        <h4><span class="sky">Email Id :</span>vishu@gmail.com</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="WrapperArea">
+    <div class="WrapperBox">
+        <div class="Small-Wrapper">
+            <div class="HelpArea">
+                <div class="enterKey">
+                    <div class="SearchBox">
+                        <h3>Wait List</h3>
+                    </div>
+                    <div class="SearchBox">
+                        <div class="SearchBox searchIcon">
+                            <form action="">
+                                <input type="text" style="width: 250px;" placeholder="Search">
+                                <a class="searchIconBtn" href="javaScipt:void(0)"><img
+                                        src="assets/images/search.svg" alt=""></a>
+                            </form>
+                            <a href="javaScript:void(0)"><img class="csv img-fluid" src="assets/images/csv.svg" alt="">Download</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="TableList" style="padding-top: 40px;">
+                    <div class="mainTable ">
+                        <table class="table table-bordered ">
+                            <thead>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Email Address</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of waitUsers; let i = index">
+                                    <td>{{i+1}}</td>
+                                    <td>{{item.email}}</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- <div class="Pagination">
+                        <ul>
+                            <li><a href="javaScript:void(0)"><img src="assets/images/left-arrow.svg" alt=""></a></li>
+                            <li class="active"><a href="javaScript:void(0)">1</a></li>
+                            <li><a href="javaScript:void(0)">2</a></li>
+                            <li><a href="javaScript:void(0)">3</a></li>
+                            <li><a href="javaScript:void(0)"><img src="assets/images/right-arrow.svg" alt=""></a></li>
+                        </ul>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

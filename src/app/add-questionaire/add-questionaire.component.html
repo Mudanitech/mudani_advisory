@@ -1,0 +1,196 @@
+<app-header></app-header>
+<!-- <pre>{{questionForm.value | json}}</pre> -->
+<div class="WrapperArea">
+    <div class="WrapperBox">
+        <div class="fixed left-0 right-0 z-100" style="top: 64px;">
+            <div class="breadNav_nav__3bu0T site-main DisFlex bg-white">
+                <div class="ant-breadcrumb"><span><span class="ant-breadcrumb-link">Questionnaire</span><span
+                            class="ant-breadcrumb-separator">&gt;</span></span><span><span
+                            class="ant-breadcrumb-link">Add</span><span
+                            class="ant-breadcrumb-separator">&gt;</span></span><span><span
+                            class="ant-breadcrumb-link">Custom
+                            Questions</span><span class="ant-breadcrumb-separator">&gt;</span></span></div>
+                <div><button type="button" class="ant-btn" [routerLink]="['/questionnaire']"><span>Back</span></button>
+                    <button type="button" class="ant-btn ml-8 ant-btn-primary" [disabled]="form.invalid"
+                        (click)="saveQuestionaire()"><span>Next</span></button></div>
+            </div>
+        </div>
+        <div class="Small-Wrapper" style="background-color: #F6F8FC;">
+            <div class="HelpArea b-questionnaire">
+                <form [formGroup]="form">
+                    <div class="questionnaire-content goal-questionnaire-root mt-16" style="padding-top: 40px;">
+                        <div class="site-main">
+                            <div class="ant-card tool-choice">
+                                <div class="tool-title">Form</div><span (click)="addQuestion()" class="choices"><i
+                                        class="anticon fa fa-plus-circle"></i>Multiple
+                                    Choice</span><span class="choices"><i
+                                        class="anticon fa fa-plus-circle"></i>Dropdown</span>
+                            </div>
+                            <div class="edit-questions-content">
+                                <div class="goal-question-section">
+                                    <div class="ant-row ant-form-item is-valid is-pristine is-untouched is-unfocused">
+                                        <div class="ant-form-item-label"><label class="ant-form-item-required"
+                                                title=""><span class="itemProps-label">Title</span></label></div>
+                                        <div class="ant-form-item-control-wrapper">
+                                            <div class="ant-form-item-control"><span class="ant-form-item-children">
+                                                    <input placeholder="Title" type="text" formControlName="title"
+                                                        class="ant-input" value="Goal Invest questionnaire"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ant-row ant-form-item is-valid is-pristine is-untouched is-unfocused">
+                                        <div class="ant-form-item-label"><label class="ant-form-item-required"
+                                                title=""><span class="itemProps-label">Description</span></label></div>
+                                        <div class="ant-form-item-control-wrapper">
+                                            <div class="ant-form-item-control"><span class="ant-form-item-children">
+                                                    <textarea formControlName="description" placeholder="description"
+                                                        class="ant-input"
+                                                        style="height: 73px; min-height: 73px; max-height: 325px; overflow-y: hidden;">Help your clients find a suitable investment strategy. Your investing strategy should reflect the kind of investor you are your personal investor profile. This quiz will help you determine your profile and then match it to an investment strategy that's designed for investors like you.</textarea></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+                                <div formArrayName="questions">
+                                    <div
+                                        *ngFor="let question of form['controls'].questions['controls']; let ix=index; let lc = count;">
+                                        <div formGroupName="{{ix}}" class="questions">
+                                            <!-- hello {{form.controls.questions.controls[ix].controls.answers.controls.length}} -->
+
+                                            <div class="goal-question-section">
+                                                <div class="goal-question-item">
+                                                    <div class="goal-question-title">
+                                                        <div
+                                                            class="ant-row ant-form-item ant-form-item-no-colon is-valid is-pristine is-untouched is-unfocused">
+                                                            <div class="ant-form-item-label"><label
+                                                                    class="ant-form-item-required"
+                                                                    title="Q2">Q{{ix+1}}</label>
+                                                            </div>
+                                                            <div class="ant-form-item-control-wrapper">
+                                                                <div class="ant-form-item-control"><span
+                                                                        class="ant-form-item-children">
+                                                                        <textarea formControlName="question"
+                                                                            class="ant-input"
+                                                                            style="height: 31px; min-height: 31px; max-height: 136px; overflow-y: hidden;">Once I begin withdrawing funds from my investments, I plan to spend all of the funds in:</textarea></span>
+                                                                    <!-- <ng-container
+                                                                        *ngIf="question.get('question').hasError('required') && question.get('question').touched">
+                                                                        <span class="errorMsg">Input Percentage</span>
+                                                                    </ng-container> -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ant-col-6 choice-record"><span>Multiple choice:
+                                                                1~10</span></div>
+                                                    </div>
+                                                    <div class="goal-question-content">
+
+
+                                                        <div formArrayName="answers">
+                                                            <div
+                                                                *ngFor="let Y of question['controls'].answers['controls']; let iy=index">
+                                                                <div formGroupName="{{iy}}" class="Ys">
+                                                                    <div class="question-option-wrap">
+                                                                        <div
+                                                                            class="ant-row ant-form-item ant-form-item-no-colon is-valid is-pristine is-untouched is-unfocused">
+                                                                            <div class="ant-form-item-label"><label
+                                                                                    class="ant-form-item-required"
+                                                                                    title="1.">{{iy+1}}.</label>
+                                                                            </div>
+                                                                            <div class="ant-form-item-control-wrapper">
+                                                                                <div class="ant-form-item-control"><span
+                                                                                        class="ant-form-item-children">
+                                                                                        <textarea
+                                                                                            formControlName="answer"
+                                                                                            class="ant-input"
+                                                                                            style="height: 31px; min-height: 31px; max-height: 136px; overflow-y: hidden;"></textarea></span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="ant-col-6 flex-colume record">
+                                                                            <div
+                                                                                class="ant-row ant-form-item is-valid is-pristine is-untouched is-unfocused">
+                                                                                <div class="ant-form-item-label"><label
+                                                                                        class="ant-form-item-required"
+                                                                                        title="value">value</label>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="ant-form-item-control-wrapper">
+                                                                                    <div class="ant-form-item-control">
+                                                                                        <span
+                                                                                            class="ant-form-item-children"><input
+                                                                                                type="text"
+                                                                                                class="ant-input"
+                                                                                                (keypress)="numberOnly($event)"
+                                                                                                formControlName="value"></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div *ngIf="iy!=0" (click)="removeAnswer(ix,iy)"
+                                                                            class="remove-icon"><a
+                                                                                href="javaScript:void(0)"><i
+                                                                                    class="anticon  fa fa-times"></i></a>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+
+
+                                                        <div *ngIf="form.controls.questions.controls[ix].controls.answers.controls.length<5"
+                                                            class="add-option" (click)="addAnswer(ix)"><a
+                                                                class="link-button-root link-button-default"
+                                                                href="javaScript:void(0)"><i
+                                                                    class="anticon fa fa-plus-circle"></i>
+                                                                Add
+                                                                option</a>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="goal-question-footer">
+                                                    <div class="ant-row-flex ant-row-flex-space-between">
+                                                        <div class="">
+                                                            <div><span><i class="choice-icon"></i> Multiple
+                                                                    Choice</span></div>
+                                                        </div>
+                                                        <div class=""><a *ngIf="ix!=0" (click)="move(-1, ix)"
+                                                                class="footer-btn link-button-root link-button-default"
+                                                                href="javaScript:void(0)"><i
+                                                                    class="anticon fa fa-caret-square-o-up"
+                                                                    style="font-size: 16px;"></i></a>
+                                                            <a *ngIf="ix != (lc-1)" (click)="move(1, ix)"
+                                                                class="footer-btn disabled-btn link-button-root link-button-default link-button-disabled"
+                                                                href="javaScript:void(0)"><i
+                                                                    class="anticon fa fa-caret-square-o-down"
+                                                                    style="font-size: 16px;"></i></a>
+                                                            <a *ngIf="ix!=0" (click)="removeQuestion(ix)"
+                                                                class="footer-btn link-button-root link-button-default"
+                                                                href="javaScript:void(0)"><i
+                                                                    class="anticon fa fa-trash-o"
+                                                                    style="font-size: 16px;"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <button type="button" (click)="saveQuestionaire()">Save Data</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

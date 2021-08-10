@@ -1,0 +1,186 @@
+<app-header></app-header>
+<ngx-spinner></ngx-spinner>
+<div class="WrapperArea">
+    <div class="WrapperBox">
+        <div class="Small-Wrapper">
+            <div class="HelpArea">
+                <div class="HelpArea">
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade  show active" id="Models" role="tabpanel"
+                            aria-labelledby="Models-tab">
+                            <div class="enterKey">
+                                <div class="SearchBox">
+                                    <div class="SearchBox searchIcon">
+                                        <form [formGroup]="form">
+                                            <input type="text" formControlName="title" (keyup.enter)="searchTicker()"
+                                                style="width: 250px;" placeholder="Search">
+                                            <a class="searchIconBtn" href="javaScipt:void(0)"><img
+                                                    src="assets/images/search.svg" alt=""></a>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="TableList" style="padding-top: 40px;">
+                                <div class="mainTable ">
+                                    <table class="table table-bordered ">
+                                        <thead>
+                                            <tr>
+                                                <th>Ticker Type</th>
+                                                <th>Ticker Image</th>
+                                                <th>Symbol</th>
+                                                <th>Company Name</th>
+                                                <th>ISIN</th>
+                                                <th>CUSIP</th>
+                                                <th>Country</th>
+                                                <th>MIC</th>
+                                                <th>Currency</th>
+                                                <th>Source</th>
+                                                <!-- <th>IdentType</th> -->
+                                                <th>Exchange</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr *ngFor="let list of getTickerListData; let i = index">
+                                                <td>
+                                                    <ng-container *ngIf="list.tickerType==1">Popular Stocks
+                                                    </ng-container>
+                                                    <ng-container *ngIf="list.tickerType==2">Popular Funds
+                                                    </ng-container>
+                                                    <ng-container *ngIf="list.tickerType==3">Popular Themes
+                                                    </ng-container>
+                                                </td>
+                                                <td><img [src]="list?.tickerImage" style="width: 30px;height: 30px;" />
+                                                </td>
+                                                <td>{{list?.symbol}}</td>
+                                                <td>{{list?.companyName}}</td>
+                                                <td>{{list?.isin}}</td>
+                                                <td>{{list?.cusip}}</td>
+                                                <td>{{list?.country}}</td>
+                                                <td>{{list?.mic}}</td>
+                                                <td>{{list?.currency}}</td>
+                                                <td>{{list?.source}}</td>
+                                                <!-- <td>{{list?.identType}}</td> -->
+                                                <td>{{list?.exchange}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ModalBox">
+    <div id="refer" class="modal " role="dialog">
+        <div tabindex="-1" class="ant-modal-wrap " role="dialog">
+            <form [formGroup]="form">
+                <div role="document" class="ant-modal matching-modal">
+                    <div tabindex="0" style="width: 0px; height: 0px; overflow: hidden;">sentinelStart</div>
+                    <div class="ant-modal-content">
+                        <div class="ant-modal-body">
+                            <div class="text-center font-16 font-bold mb-16" style="margin-bottom: 30px;">Ticker Detail
+                            </div>
+                            <hr>
+                            <label>Symbol : <span
+                                    class="text-gray font-12 ticket-detail">{{ticketData.symbol}}</span></label><br>
+
+                            <label>Company Name : <span
+                                    class="text-gray font-12 ticket-detail">{{ticketData.companyName}}</span></label><br>
+
+                            <label>ISIN : <span
+                                    class="text-gray font-12 ticket-detail">{{ticketData.isin}}</span></label><br>
+
+                            <label>CUSIP : <span
+                                    class="text-gray font-12 ticket-detail">{{ticketData.cusip}}</span></label><br>
+
+                            <label>Country : <span
+                                    class="text-gray font-12 ticket-detail">{{ticketData.country}}</span></label><br>
+
+                            <label>MIC : <span
+                                    class="text-gray font-12 ticket-detail">{{ticketData.mic}}</span></label><br>
+
+                            <label>Currency : <span
+                                    class="text-gray font-12 ticket-detail">{{ticketData.currency}}</span></label><br>
+
+                            <label>Source : <span
+                                    class="text-gray font-12 ticket-detail">{{ticketData.source}}</span></label><br>
+
+                            <label>Ident Type : <span
+                                    class="text-gray font-12 ticket-detail">{{ticketData.identType}}</span></label><br>
+
+                            <label>Exchange : <span
+                                    class="text-gray font-12 ticket-detail">{{ticketData.exchange}}</span></label><br>
+
+                            <hr>
+                            <form [formGroup]="addTickerform">
+                                <label>Select Type</label>
+                                <div class="ant-row ant-form-item is-invalid is-pristine is-untouched is-unfocused">
+                                    <div class="ant-form-item-control-wrapper">
+                                        <div class="ant-form-item-control"><span class="ant-form-item-children"><span
+                                                    class="w-full ant-cascader-picker w-full" tabindex="0"><span
+                                                        class="ant-cascader-picker-label"></span>
+                                                    <select name="" formControlName="tickerType" id=""
+                                                        class="ant-input">
+                                                        <option [ngValue]="1"> Popular Stocks </option>
+                                                        <option [ngValue]="2"> Popular Funds </option>
+                                                        <option [ngValue]="3"> Popular Themes </option>
+                                                    </select>
+                                                </span></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="Filter FilterSearch">
+                                    <div class="form-group">
+                                        <label>Image</label>
+                                        <input type="file" formControlName="tickerImage"
+                                            (change)="onFileSelected($event)" class="form-control" placeholder="Name">
+                                    </div>
+                                </div> -->
+                                <br>
+                            </form>
+                            <div class="text-center mt-24"><button (click)="closePops('refer')" type="button"
+                                    class="ant-btn my-0 mx-4"><span>Cancel</span></button>
+                                <button type="button" [disabled]="addTickerform.invalid" (click)="saveData()"
+                                    class="ant-btn my-0 mx-4 ant-btn-primary"><span>Save</span></button></div>
+                        </div>
+                    </div>
+                    <div tabindex="0" style="width: 0px; height: 0px; overflow: hidden;">sentinelEnd</div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="ModalBox">
+    <div id="referError" class="modal " role="dialog">
+        <div tabindex="-1" class="ant-modal-wrap " role="dialog">
+            <form [formGroup]="form">
+                <div role="document" class="ant-modal matching-modal">
+                    <div tabindex="0" style="width: 0px; height: 0px; overflow: hidden;">sentinelStart</div>
+                    <div class="ant-modal-content">
+                        <div class="ant-modal-body">
+                            <div class="text-center font-16 font-bold mb-16" style="margin-bottom: 30px;">Ticker Detail
+                            </div>
+                            <hr>
+                            <label style="margin-left: 78px;font-size: 19px;">Ticker is not available.</label><br>
+
+
+
+                            <div class="text-center mt-24">
+                                <button type="button" (click)="closePops('referError')"
+                                    class="ant-btn my-0 mx-4 ant-btn-primary"><span>Okay</span></button></div>
+                        </div>
+                    </div>
+                    <div tabindex="0" style="width: 0px; height: 0px; overflow: hidden;">sentinelEnd</div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+<app-header></app-header>
+<ngx-spinner></ngx-spinner>
+<div class="WrapperArea">
+    <div class="WrapperBox">
+        <div class="Small-Wrapper">
+            <div class="HelpArea">
+                <div class="questionnaire-list">
+                    <div class="row rowQust">
+                        <div *ngFor="let list of questionnaireList" class="col-md-3"
+                            style="padding-left: 7px; padding-right: 7px;">
+                            <div class="ques-card card-bordered">
+                                <div class="ques-card-content">
+                                    <h3 class="content-title break-point"
+                                        title="Investor profile questionnaire - 3 Question, 3 portfolios">
+                                        {{list.title}}</h3>
+                                    <!-- <span class="ques-type">Score Based</span> -->
+                                    <span>Created At : {{list.createdAt | date}}</span><br>
+                                    <p class="content-text">{{list.description}}</p>
+                                </div>
+                                <div class="ques-card-btm">
+
+                                    <span style="cursor: not-allowed;" *ngIf="list.status==1 else elseBlock"
+                                        class="card-tag tag-blue">Active</span>
+
+                                    <ng-template #elseBlock>
+                                        <span style="cursor: pointer;" (click)="enableQuestionare(list)"
+                                            class="card-tag tag-blue">In-Active</span>
+                                    </ng-template>
+                                    <div class="icon-group">
+                                        <span class="copy-link-label">Copy Link</span>
+                                        <i [routerLink]="['/edit-questionnaire/',list._id]"
+                                            class="fa fa-pencil anticon-edit anticon icon-normal"
+                                            aria-hidden="true"></i>
+                                        <i class="fa fa-eye anticon icon-normal" aria-hidden="true"></i>
+                                        <i (click)="deleteQuestionnaire(list)"
+                                            class="fa fa-trash-o anticon btn-disabled icon-normal"
+                                            aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="col-md-2"></div> -->
+
+                        <!-- <div class="col-md-3" style="padding-left: 7px; padding-right: 7px;">
+                            <div class="ques-card card-bordered">
+                                <div class="ques-card-content">
+                                    <h3 class="content-title break-point"
+                                        title="Investor profile questionnaire - 3 Question, 3 portfolios">
+                                        Investor profile questionnaire - 3 Question, 3 portfolios</h3><span
+                                        class="ques-type">Score
+                                        Based</span><span>04/30/2020</span><br>
+                                    <p class="content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Eligendi a delectus, possimus accusamus
+                                        quisquam molestias! Exercitationem qui ducimus, eligendi doloremque illo error
+                                        omnis explicabo necessitatibus autem,
+                                        tempore totam quasi aut.</p>
+                                </div>
+                                <div class="ques-card-btm"><span class="card-tag tag-blue">Default</span>
+                                    <div class="icon-group">
+                                        <span class="copy-link-label">Copy Link</span>
+                                        <i [routerLink]="['/edit-questionnaire']"
+                                            class="fa fa-pencil anticon-edit anticon icon-normal"
+                                            aria-hidden="true"></i>
+                                        <i class="fa fa-eye anticon icon-normal" aria-hidden="true"></i>
+                                        <i class="fa fa-trash-o anticon btn-disabled icon-normal"
+                                            aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <div class="col-md-3" style="padding-left: 7px; padding-right: 7px;">
+                            <div class="panel-add" [routerLink]="['/add-questionnaire']"><i class=" anticon fa
+                                fa-plus-circle" style="font-size: 30px;"></i><br>Add New</div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

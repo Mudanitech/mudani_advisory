@@ -1,0 +1,42 @@
+<app-header></app-header>
+
+<div class="WrapperArea">
+    <div class="WrapperBox">
+        <div class="Small-Wrapper">
+            <div class="HelpArea">
+                <ul class="nav nav-tabs MainTabAll" id="myTab" role="tablist">
+                    <li class="nav-item ">
+                        <a class="nav-link active" id="Summary-tab" data-toggle="tab" href="#Summary" role="tab" aria-controls="Summary" (click)="summaryClick()" aria-selected="true">Summary | Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " id="Clients-tab" data-toggle="tab" href="#Clients" role="tab" aria-controls="Clients" (click)=clientClick() aria-selected="false">Clients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " id="Investing-tab" data-toggle="tab" href="#Investing" role="tab" aria-controls="Investing" (click)=investingClick() aria-selected="false">Investing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Transactions-tab" data-toggle="tab" href="#Transactions" role="tab" aria-controls="Transactions" (click)=transactionClick() aria-selected="false">Transactions</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="Summary" role="tabpanel" aria-labelledby="Summary-tab">
+                        <app-summary></app-summary>
+                    </div>
+
+                    <div class="tab-pane fade" id="Clients" role="tabpanel" aria-labelledby="Clients-tab">
+                        <app-client></app-client>
+                    </div>
+
+                    <div class="tab-pane fade" id="Investing" role="tabpanel" aria-labelledby="Investing-tab">
+                        <app-investing></app-investing>
+                    </div>
+
+                    <div class="tab-pane fade" id="Transactions" role="tabpanel" aria-labelledby="Transactions-tab">
+                        <app-transactions></app-transactions>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

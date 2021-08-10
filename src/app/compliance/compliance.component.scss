@@ -1,0 +1,15 @@
+button[type="button"]:disabled {
+    background: #9c9c9c;
+    border-color: #9c9c9c;
+    cursor: not-allowed;
+  }
+input.ng-invalid.ng-touched{
+    border-left: 5px solid red;
+}
+
+textarea.ng-invalid.ng-touched{
+    border-left: 5px solid red;
+}
+select.ng-invalid.ng-touched{
+    border-left: 5px solid red;
+}
